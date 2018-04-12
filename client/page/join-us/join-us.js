@@ -70,6 +70,8 @@ Page({
     var chinese_name = /^[\u4e00-\u9fa5]{2,8}$/;
     // console.log(formdata);
 
+    // console.log(`${CONFIG.database_host}/api/app-form`);
+
     // wx.request({
     //   url: 'https://itxbu0dx.qcloud.la/api/app-form',
     //   method: 'POST',
@@ -134,7 +136,7 @@ Page({
     }
 
     wx.request({
-      url: 'https://itxbu0dx.qcloud.la/api/app-form',
+      url: `${CONFIG.database_host}/api/app-form`,
       method: 'POST',
       data: formdata,
       success: (data) => {
@@ -142,7 +144,7 @@ Page({
       }
     })
 
-    console.log("Legit data! POST to back-end data server");
+    // console.log("Legit data! POST to back-end data server");
   },
 
   bindAlterChange: function (e) {
