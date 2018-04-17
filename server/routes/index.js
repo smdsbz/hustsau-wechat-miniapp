@@ -1,10 +1,11 @@
+var func = require('../controllers/my_sql.js');
 /**
  * ajax 服务路由集合
  */
 const router = require('koa-router')({
     prefix: '/api'
 });
-// const controllers = require('../controllers');
+const controllers = require('../controllers');
 
 // 从 sdk 中取出中间件
 // 这里展示如何使用 Koa 中间件完成登录态的颁发与验证
@@ -23,15 +24,19 @@ router.get('/app-form', async (ctx, next) => {
 
 
 // router.get('/app-form', async function (ctx, next) {
-//   ctx.response.body = '.....';
+//   ctx.response.body = func(ctx);
 // });
+
+router.get('/demo', controllers.demo);
+router.get('/sql', controllers.my_sql);
+
 
 
 router.post('/app-form', async (ctx, next) => {
   // smdsbz: TODO: MySQL 存储数据
   // ===========================
-  let name = ctx.request.body.name;
-  ctx.response.body = name;
+  // let mobile = ctx.request.body.mobile;
+  ctx.response.body ='Successfully post.'
   // ===========================
 });
 

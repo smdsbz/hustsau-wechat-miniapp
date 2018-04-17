@@ -68,18 +68,18 @@ Page({
     var formdata = e.detail.value;
     var phonenum = /^\d{11}$/;
     var chinese_name = /^[\u4e00-\u9fa5]{2,8}$/;
-    // console.log(formdata);
+    console.log(formdata);
 
     // console.log(`${CONFIG.database_host}/api/app-form`);
 
-    // wx.request({
-    //   url: 'https://itxbu0dx.qcloud.la/api/app-form',
-    //   method: 'POST',
-    //   data: formdata,
-    //   success: (data) => {
-    //     console.log(data);
-    //   }
-    // })
+    wx.request({
+      url: 'https://itxbu0dx.qcloud.la/api/app-form',
+      method: 'POST',
+      data: formdata,
+      success: (data) => {
+        console.log(data);
+      }
+    })
 
     // Data legality checks
     // - empty name field
@@ -135,14 +135,17 @@ Page({
       return;
     }
 
-    wx.request({
-      url: `${CONFIG.database_host}/api/app-form`,
-      method: 'POST',
-      data: formdata,
-      success: (data) => {
-        console.log(data);
-      }
-    })
+    // wx.request({
+    //   url: `${CONFIG.database_host}/api/app-form`,
+    //   method: 'POST',
+    //   data: formdata,
+    //   // success: (data) => {
+    //   //   console.log(data);
+    //   // },
+    //   complete: (data) => {
+    //     console.log(data);
+    //   }
+    // })
 
     // console.log("Legit data! POST to back-end data server");
   },
