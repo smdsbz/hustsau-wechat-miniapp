@@ -27,18 +27,12 @@ router.get('/app-form', async (ctx, next) => {
 //   ctx.response.body = func(ctx);
 // });
 
-router.get('/demo', controllers.demo);
-router.get('/sql', controllers.my_sql);
+// router.get('/demo', controllers.demo);
+// router.get('/sql', controllers.my_sql);
 
 
 
-router.post('/app-form', async (ctx, next) => {
-  // smdsbz: TODO: MySQL 存储数据
-  // ===========================
-  // let mobile = ctx.request.body.mobile;
-  ctx.response.body ='Successfully post.'
-  // ===========================
-});
+router.post('/app-form', controllers.my_sql);
 
 
 
