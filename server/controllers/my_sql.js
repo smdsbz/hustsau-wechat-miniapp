@@ -7,33 +7,34 @@ module.exports = async ctx => {
     name: ctx.request.body.name,
     gender: ctx.request.body.gender,
     mobile: ctx.request.body.mobile,
-    "first-department-choice": ctx.request.body["first-department-choice"]
+    "first-department-choice": ctx.request.body["first-department-choice"],
+    // 以下为非必填项
+    apartment: ctx.request.body.apartment,
+    birthday: ctx.request.body.birthday,
+    "birth-place": ctx.request.body["birth-place"].join(),
+    //birth-place is an array
+    email: ctx.request.body.email,
+    expectations: ctx.request.body.expectations,
+    "faculty-and-class": ctx.request.body["faculty-and-class"],
+    "former-experience": ctx.request.body["former-experience"],
+    hobbies: ctx.request.body.hobbies,
+    "first-department-choice": ctx.request.body["first-department-choice"],
+    "self-explanation": ctx.request.body["self-explanation"],
+    "student-id": ctx.request.body["student-id"]
   }
   await mysql("join_us").insert(new_data).catch(error =>{
     console.error(error);
     ctx.body = {
-            code: -1,
-            error: "unable to insert"
-        }
+            error: "unable to insert =>"+error
+        };
+    ctx.status = 404;
+    ctx.response.error = { message: "Unable to insert into database"};
+    // the error handling isn't working as I expected, maybe https://github.com/koajs/koa/issues/803
   })
- //  try {
- //
- //     }
- // } catch (e) {
- //     // catch 住全局的错误信息
- //     debug('Catch Error: %o', e)
- //
- //     // 设置状态码为 200 - 服务端错误
- //     ctx.status = 200
- //
- //     // 输出详细的错误信息
- //     ctx.body = {
- //         code: -1,
- //         error: e && e.message ? e.message : e.toString()
- //     }
- // }
-  res = await mysql('join_us').select('*')
-  // TODO: handle errors and fetch it to the frontend
+
+  res = await mysql('join_us').max('idx')
+  // retrun the index of the latest record
+
   // // 改
   // await mysql("Book").update({ price: 66 }).where({ id })
   // // 删
