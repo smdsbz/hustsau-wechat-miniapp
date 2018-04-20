@@ -68,7 +68,7 @@ Page({
     var formdata = e.detail.value;
     var phonenum = /^\d{11}$/;
     var chinese_name = /^[\u4e00-\u9fa5]{2,8}$/;
-    // console.log(formdata);
+    console.log(formdata);
 
     // console.log(`${CONFIG.database_host}/api/app-form`);
 
@@ -139,7 +139,10 @@ Page({
       url: `${CONFIG.database_host}/api/app-form`,
       method: 'POST',
       data: formdata,
-      success: (data) => {
+      // success: (data) => {
+      //   console.log(data);
+      // },
+      complete: (data) => {
         console.log(data);
       }
     })
@@ -155,55 +158,55 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-  
+
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-  
+
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-  
+
   },
 
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-  
+
   }
 })
