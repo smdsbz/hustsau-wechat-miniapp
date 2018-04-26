@@ -68,7 +68,7 @@ Page({
     var formdata = e.detail.value;
     var phonenum = /^\d{11}$/;
     var chinese_name = /^[\u4e00-\u9fa5]{2,8}$/;
-    console.log(formdata);
+    // console.log(formdata);
 
     // console.log(`${CONFIG.database_host}/api/app-form`);
 
@@ -139,11 +139,18 @@ Page({
       url: `${CONFIG.database_host}/api/app-form`,
       method: 'POST',
       data: formdata,
-      // success: (data) => {
-      //   console.log(data);
-      // },
-      complete: (data) => {
+      success: (data) => {
         console.log(data);
+        // TODO: return data, issue in server/middlewares/response.js
+        wx.showModal({
+          title: "提交成功",
+          content: "面试地点将以短信形式通知！",
+          showCancel: false,
+          confirmText: "确认"
+        });
+      },
+      complete: (data) => {
+        // console.log(data);
       }
     })
 

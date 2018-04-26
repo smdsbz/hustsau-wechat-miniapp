@@ -6,11 +6,128 @@
    <template is="head" data="{{title: 'About AU'}}" /> 
 <view class='page-body'>
 
+<view>
+  <scroll-view class="scroll-view_H" scroll-x="true" style="width: 100%">
+    <view id="demo1" class="scroll-view-item_H demo-text-1"></view>
+    <view id="demo2"  class="scroll-view-item_H demo-text-2"></view>
+    <view id="demo3" class="scroll-view-item_H demo-text-3"></view>
+  </scroll-view>
+</view>
+
+
+<view class='container'>
+  <view class='page-body-text-au'>
+    <template is="head_a" data="{{title: '财务部'}}" />
+    <text>
+    1、统一执行社联的财务审核、分配、监督和管理工作
+    2、负责由校团委拨款举办的社团专项活动的财务工作
+    </text>
+  </view>
+  <view class='page-body-text-au'>
+    <template is="head_a" data="{{title: '秘书部'}}" />
+    <text>
+    1、负责主席团和各部门之间的交流、协调各部门工作
+    2、负责社联章程及制度的起草、监督其实施
+    3、内部物品管理，档案管理，会议组织及值班安排
+    </text>
+  </view>
+  <view class='page-body-text-au'>
+    <template is="head_a" data="{{title: '人力资源部'}}" />
+    <text>
+    1、社联干部招聘、调整，社联干部工作绩效考核评优
+    2、对社联合社团干部进行培训；引导协会会长做好社团工作
+    3、管理组织内部人事信息，建设传承社联组织文化
+    </text>
+  </view>
+  <view class='page-body-text-au'>
+    <template is="head_a" data="{{title: '社团部'}}" />
+    <text>
+    1、策划、组织社团进军营、百团大战、协会洽谈会、社团助推计划登社联品牌活动
+    2、作为社团与社联、社团与社团间沟通合作的平台
+    3、负责对社团的统一通知、对社团资料的搜集整理
+    4、与各个社团管理层沟通交流，审核并协助完善社团的活动策划，为社团活动提供支持并跟进教育
+    </text>
+  </view>
+  <view class='page-body-text-au'>
+    <template is="head_a" data="{{title: '行政监察部'}}" />
+    <text>
+    1、全面负责社联面向社团的各项行政和监督工作
+    2、行政组：负责新社团的审核和注册，对问题社团进行整顿和取缔
+    3、评分组：对校级社团进行内建和活动等方面的日常考核与评分
+    4、常务组：负责部门对内事物和文化建设，开展社团会员维权工作
+    </text>
+  </view>
+  <view class='page-body-text-au'>
+    <template is="head_a" data="{{title: '公共关系部'}}" />
+    <text>
+    1、建立并维护社联与武汉各大高校、社会团体之间的关系
+    2、联络校内各类组织、及时了解校园动态
+    3、负责日常管理并培训华中大社联礼仪队主持人队
+    </text>
+  </view>
+  <view class='page-body-text-au'>
+    <template is="head_a" data="{{title: '外联部'}}" />
+    <text>
+    1、沟通社联与校外企业，为社联活动提供赞助
+    2、与企业沟通并建立长期合作关系，引导社团社联走出校园
+    3、商业品牌的校园宣传与推广，协助举办大型活动
+    </text>
+  </view>
+  <view class='page-body-text-au'>
+    <template is="head_a" data="{{title: '媒体部'}}" />
+    <text>
+    1、视觉创作组：社联社团大型活动图片与摄影报道，制作视频、写真拍摄、培养富有创意、掌握各类软件、摄影、视频制作的人才
+    2、网络文编组：负责社联社团各类活动新闻报道、原创文中的软文写作并管理线上新闻版块。培养文字能力强、熟悉新闻的人才
+    </text>
+  </view>
+  <view class='page-body-text-au'>
+    <template is="head_a" data="{{title: '宣传部'}}" />
+    <text>
+    1、活动宣传策划：在实际宣传中运用创意，制定并落实最有效传播策略
+    2、艺术设计：设计海报、传单、杂志、社联文化产品等
+    3、人才培养：平面设计、摄影后期、宣传创意、文案策划等时间及各类设计软件培训
+    </text>
+  </view>
+  <view class='page-body-text-au'>
+    <template is="head_a" data="{{title: '思存工作室'}}" />
+    <text>
+    1、为社联内部网站以及社团网站提供网站制作和服务器维护的技术支持
+    2、为社联和社团的各项活动提供硬件和软件方面的技术支持
+    3、互联网产品设计运营
+    </text>
+  </view>
+  <view class='page-body-text-au'>
+    <template is="head_a" data="{{title: '新媒体工作室'}}" />
+    <text>
+    1、统筹运营社联各个官方线上平台，实时发布讯息
+    2、策划特色专题及线上线下活动
+    3、与社团相联系，实现信息的双向传递，扩大宣传效应
+    4、微信公众平台的二次开发及新媒体宣传模式的尝试和优化
+    </text>
+  </view>
+  <view class='page-body-text-au'>
+    <template is="head_a" data="{{title: '文艺拓展部'}}" />
+    <text>
+    1、经理人组：统筹管理表演队，负责表演队日常排练及演出事务
+    2、常务组：部门常务资料整理和更新，表演队评分，相关演出部门活动的策划
+    3、拓展组：拓展推广表演队，收集整合校内演艺资源，与社联活动有关的对外交流
+    </text>
+  </view>
+  <view class='page-body-text-au'>
+    <template is="head_a" data="{{title: '社团外联企划部'}}" />
+    <text>
+    1、为社团寻求或提供包括师资、活动赞助、长期商业合作在内的各种资源，包括学校社团外联活动的协助与监管
+    2、加强社联与社团之间的联系，利用社联的资源帮助社团发展
+    3、通过社团骨干培训体系，提升部员的整体素质，为社团培养管理型精英人才
+    </text>
+  </view>
+</view>
+
 
 
 <view class="container" style="text-align:center;">{{ msg }}
 
-  <map longitude="{{ lon }}" latitude= "{{ lat }}" scale="14" controls="{{controls}}"></map>
+  <!-- <map longitude="{{ lon }}" latitude= "{{ lat }}" scale="14" controls="{{controls}}"></map> -->
   <!--star-du: TODO: get location of the user and show it on the map. Using wx.getLocation(OBJECT) -->
 
   <button bindtap="toJoin" type='primary' size='mini'  style='center'>现在就报名</button> 

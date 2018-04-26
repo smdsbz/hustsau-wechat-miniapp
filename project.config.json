@@ -8,5 +8,6 @@
 	},
 	"appid": "wx605fd2d564055740",
 	"projectname": "HustsauEntrance",
+	"compileType": "miniprogram",
 	"condition": {}
 }
