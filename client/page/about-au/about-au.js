@@ -1,10 +1,11 @@
 // page/about-au/about-au.js
 Page({
 
-  toJoin: function () { 
-    wx.switchTab({
-      url: '../join-us/join-us'
-    });
+  to36Building: function () { 
+    // wx.switchTab({
+    //   url: '../join-us/join-us'
+    // });
+
     // wx.getLocation({
     //   type: 'wgs84',
     //   success: function (res) {
@@ -16,20 +17,30 @@ Page({
     // });
     wx.openLocation({
       type: "wgs84",
-      latitude: this.data.lat,
-      longitude: this.data.lon,
+      latitude: this.data.location["36Building"].lat,
+      longitude: this.data.location["36Building"].lon,
       scale: 17,
       name: "36 号楼",
       address: "SicunStudio"
     })
 
   },
+
+
   /**
    * 页面的初始数据
    */
   data: {
-    lat: 30.516015,
-    lon: 114.415886
+    location: {
+      '36Building': {
+        lat: 30.516015,
+        lon: 114.415886
+      },
+      'SUBuilding': {
+        lat: 100,
+        lon: 100
+      }
+    }
   },
 
 

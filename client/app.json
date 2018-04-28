@@ -1,8 +1,10 @@
 {
   "pages": [
 
-    "page/component/index",
+    "page/about-au/about-au",
+    "page/join-us/join-us",
 
+    "page/component/index",
     "page/component/pages/view/view",
     "page/component/pages/scroll-view/scroll-view",
     "page/component/pages/swiper/swiper",
@@ -27,10 +29,7 @@
     "page/component/pages/video/video",
     "page/component/pages/map/map",
     "page/component/pages/canvas/canvas",
-
-
     "page/API/index",
-
     "page/API/pages/login/login",
     "page/API/pages/get-user-info/get-user-info",
     "page/API/pages/request-payment/request-payment",
@@ -64,11 +63,8 @@
     "page/API/pages/get-location/get-location",
     "page/API/pages/open-location/open-location",
     "page/API/pages/choose-location/choose-location",
-    "page/API/pages/storage/storage",
-
-
-    "page/about-au/about-au",
-    "page/join-us/join-us"
+    "page/API/pages/storage/storage"
+    
 
   ],
 
@@ -87,18 +83,6 @@
     "borderStyle": "black",
     "backgroundColor": "#ffffff",
     "list": [
-      {
-        "pagePath": "page/component/index",
-        "iconPath": "image/icon_component.png",
-        "selectedIconPath": "image/icon_component_HL.png",
-        "text": "组件速查"
-      },
-      {
-        "pagePath": "page/API/index",
-        "iconPath": "image/icon_API.png",
-        "selectedIconPath": "image/icon_API_HL.png",
-        "text": "接口速查"
-      },
       {
         "pagePath": "page/about-au/about-au",
         "text": "关于社联"
