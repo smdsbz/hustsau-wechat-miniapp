@@ -50,7 +50,7 @@ module.exports = async (ctx) => {
     mysql('join_us').select('name').where('mobile', '=', new_data.mobile)
     .then(names => {
       if (names.length) {
-        reject({ code: 900, msg: 'duplicate mobile!' });
+        reject({ code: 900, data: 'duplicate mobile!' });
       }
       return mysql('join_us').insert(new_data);
     })
@@ -59,10 +59,10 @@ module.exports = async (ctx) => {
     })
     .then(index => {
       console.log(index);
-      ctx.body = {
+      resolve({
         code: 200,
-        data: 123
-      };
+        data: index
+      });
     })
     .catch(err => {
       reject({ code: 901, data: 'unexpeted error' });

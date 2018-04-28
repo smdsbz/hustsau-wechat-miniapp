@@ -135,24 +135,65 @@ Page({
       return;
     }
 
+    // TODO: Display loading animation
+    wx.showLoading({
+      title: '正在提交',
+      mask: true,       // prevent unwanted touch event
+    });
+
+    // send the data
     wx.request({
       url: `${CONFIG.database_host}/api/app-form`,
       method: 'POST',
       data: formdata,
       success: (data) => {
+        // `data` is server return
+        // `data.data` is server-returned value!
         console.log(data);
-        // TODO: return data, issue in server/middlewares/response.js
-        wx.showModal({
-          title: "提交成功",
-          content: "面试地点将以短信形式通知！",
-          showCancel: false,
-          confirmText: "确认"
-        });
+        switch (data.data.code) { // careful with `data.data`
+          case 200: {
+            wx.showModal({
+              title: "提交成功",
+              content: "面试地点将以短信形式通知！",
+              showCancel: false,
+              confirmText: "确认"
+            });
+            break;
+          }
+          case 900: {
+            wx.showModal({
+              title: "提交失败",
+              content: "请勿重复提交！",
+              showCancel: false,
+              confirmText: "确认"
+            });
+            break;
+          }
+          case 901: {
+            wx.showModal({
+              title: "提交失败",
+              content: "出现未知错误！请联系招新工作人员！",
+              showCancel: false,
+              confirmText: "确认"
+            });
+            break;
+          }
+          default: {
+            wx.showModal({
+              title: "提交失败",
+              content: "出现未知错误！请联系招新工作人员！",
+              showCancel: false,
+              confirmText: "确认"
+            });
+            break;   
+          }
+        }
       },
       complete: (data) => {
         // console.log(data);
       }
-    })
+    });
+    wx.hideLoading();
 
     // console.log("Legit data! POST to back-end data server");
   },

@@ -59,3 +59,7 @@ typings/
 
 # Vim Session
 Session.vim
+
+# macOS files
+.DS_Store
+

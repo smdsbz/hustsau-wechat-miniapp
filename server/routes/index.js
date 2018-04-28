@@ -34,13 +34,16 @@ router.get('/app-form', async (ctx, next) => {
 
 
 router.post('/app-form', async (ctx, next) => {
-  addFormToDB(ctx)
+  let retval = addFormToDB(ctx)
   .then((retval) => {
-    console.log(ctx.body);
+    console.log(retval);
+    return retval;
   })
   .catch(err => {
-    console.log(ctx.body);
+    console.log(err);
+    return err;
   });
+  ctx.response.body = await retval;
 });
 
 
