@@ -1,4 +1,5 @@
 const { mysql } = require('../qcloud')
+const validateForm = require('../tools/validate')
 /**
  * insert data into my_sql database, table:"join_us"
  *   NOTE: the structure can be seen at Tencent Cloud
@@ -8,11 +9,11 @@ const { mysql } = require('../qcloud')
  *
  * Args:      ctx  - the context sent to the server
  *
- * Return:    ctx.response.error - json data that contains error
+ * Return:    ctx.body.error - json data that contains error
  message, can be found in client-side at data.console.error
               ctx.status - assigned to 404 if error occurs
-              ctx.state.data - json data(array) that contains the
-`index` of the latest item that is inserted
+              ctx.body.item_index - json data(array) that contains
+the `index` of the latest item that is inserted
  */
 module.exports = async ctx => {
   var new_data = {
@@ -35,6 +36,13 @@ module.exports = async ctx => {
     "self-explanation": ctx.request.body["self-explanation"],
     "student-id": ctx.request.body["student-id"]
   }
+  // if (!validateForm(new_data.name, new_data.mobile, new_data["student-id"])){
+  //   console.error("incorrect input!");
+  //   ctx.body = {
+  //           error: "invalid name/mobile"
+  //       };
+  //   ctx.status = 404;
+  // }
   await mysql("join_us").insert(new_data).catch(error =>{
     console.error(error);
     ctx.body = {
