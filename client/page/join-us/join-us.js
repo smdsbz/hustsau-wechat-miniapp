@@ -11,11 +11,11 @@ Page({
     startDate: "1990-01-01",
     today: new Date().toJSON().slice(0, 10),
     departments: ['请选择...', '财务部', '秘书部', '人力资源部', '社团部', '行政监察部',
-        '公共关系部', '外联部', '媒体部', '宣传部', '思存工作室',
-        '新媒体工作室', '文艺拓展部', '社团外联企划部'
+      '公共关系部', '外联部', '媒体部', '宣传部', '思存工作室',
+      '新媒体工作室', '文艺拓展部', '社团外联企划部'
     ],
     birthday: new Date(new Date().getFullYear() - 18, 0, 1) // smdsbz: assuming they are all 18-years old
-                  .toJSON().slice(0, 10),
+      .toJSON().slice(0, 10),
     firstChoice: 0,     // smdsbz: pass `departments[firstChoice]` to back-end
     secondChoice: 0,    //         `-1` for no second choice
   },
@@ -32,24 +32,24 @@ Page({
    */
   bindBirthdayChange: function (e) {
     this.setData({
-        birthday: e.detail.value
+      birthday: e.detail.value
     });
   },
 
   bindRegionChange: function (e) {
     this.setData({
-        birthPlace: e.detail.value
+      birthPlace: e.detail.value
     });
   },
 
   bindDepartmentChange: function (e) {
     if (this.data.firstChoice != 0  // smdsbz: HACK: Don't delete `this`!
-          && e.detail.value == 0) {
+      && e.detail.value == 0) {
       // smdsbz: you cannot choose ‘请选择...’ again, once you chose sth. else
       return;
     }
     this.setData({
-        firstChoice: e.detail.value
+      firstChoice: e.detail.value
     });
   },
 
@@ -68,7 +68,7 @@ Page({
     var formdata = e.detail.value;
     var phonenum = /^\d{11}$/;
     var chinese_name = /^[\u4e00-\u9fa5]{2,8}$/;
-    console.log(formdata);
+    // console.log(formdata);
 
     // console.log(`${CONFIG.database_host}/api/app-form`);
 
@@ -104,7 +104,7 @@ Page({
       return;
     }
     // - refuse to provide tel. or invalid tel
-    if (formdata["mobile"].length === 0 || !phonenum.test(formdata["mobile"]) ) {
+    if (formdata["mobile"].length === 0 || !phonenum.test(formdata["mobile"])) {
       wx.showModal({
         title: "信息不完整或有错误",
         content: "请填写您的手机号码！我们将以短信的形式通知您面试地点！\n如已填写，检查下是否填错了？",
@@ -125,7 +125,7 @@ Page({
     }
     // - if chose alternative department
     if (formdata["allow-alternative-department"] === true
-          && formdata["second-department-choice"] === 0) {
+      && formdata["second-department-choice"] === 0) {
       wx.showModal({
         title: "信息不完整",
         content: "请选择您的备选部门！\n或者取消勾选「是否服从调剂」！",
@@ -135,17 +135,65 @@ Page({
       return;
     }
 
+    // TODO: Display loading animation
+    wx.showLoading({
+      title: '正在提交',
+      mask: true,       // prevent unwanted touch event
+    });
+
+    // send the data
     wx.request({
       url: `${CONFIG.database_host}/api/app-form`,
       method: 'POST',
       data: formdata,
-      // success: (data) => {
-      //   console.log(data);
-      // },
-      complete: (data) => {
+      success: (data) => {
+        // `data` is server return
+        // `data.data` is server-returned value!
         console.log(data);
+        switch (data.data.code) { // careful with `data.data`
+          case 200: {
+            wx.showModal({
+              title: "提交成功",
+              content: "面试地点将以短信形式通知！",
+              showCancel: false,
+              confirmText: "确认"
+            });
+            break;
+          }
+          case 900: {
+            wx.showModal({
+              title: "提交失败",
+              content: "请勿重复提交！",
+              showCancel: false,
+              confirmText: "确认"
+            });
+            break;
+          }
+          case 901: {
+            wx.showModal({
+              title: "提交失败",
+              content: "出现未知错误！请联系招新工作人员！",
+              showCancel: false,
+              confirmText: "确认"
+            });
+            break;
+          }
+          default: {
+            wx.showModal({
+              title: "提交失败",
+              content: "出现未知错误！请联系招新工作人员！",
+              showCancel: false,
+              confirmText: "确认"
+            });
+            break;
+          }
+        }
+      },
+      complete: (data) => {
+        // console.log(data);
       }
-    })
+    });
+    wx.hideLoading();
 
     // console.log("Legit data! POST to back-end data server");
   },

@@ -1,4 +1,4 @@
-var func = require('../controllers/my_sql.js');
+const addFormToDB = require('../controllers/addFormToDB.js');
 /**
  * ajax 服务路由集合
  */
@@ -32,7 +32,19 @@ router.get('/app-form', async (ctx, next) => {
 
 
 
-router.post('/app-form', controllers.my_sql);
+router.post('/app-form', async (ctx, next) => {
+  let retval = addFormToDB(ctx)
+    .then((retval) => {
+      console.log(retval);
+      return retval;
+    })
+    .catch(err => {
+      console.log(err);
+      return err;
+    });
+  ctx.response.body = await retval;
+});
+
 
 
 
