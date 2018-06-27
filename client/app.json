@@ -1,10 +1,8 @@
 {
   "pages": [
-
-
+    "page/about-au/about-au",
     "page/join-us/join-us",
     "page/component/index",
-
     "page/component/pages/view/view",
     "page/component/pages/scroll-view/scroll-view",
     "page/component/pages/swiper/swiper",
@@ -29,10 +27,7 @@
     "page/component/pages/video/video",
     "page/component/pages/map/map",
     "page/component/pages/canvas/canvas",
-
-
     "page/API/index",
-
     "page/API/pages/login/login",
     "page/API/pages/get-user-info/get-user-info",
     "page/API/pages/request-payment/request-payment",
@@ -66,32 +61,35 @@
     "page/API/pages/get-location/get-location",
     "page/API/pages/open-location/open-location",
     "page/API/pages/choose-location/choose-location",
-    "page/API/pages/storage/storage",
-
-
-    "page/about-au/about-au"
-
+    "page/API/pages/storage/storage"
   ],
-
-
   "window": {
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "演示",
     "navigationBarBackgroundColor": "#F8F8F8",
     "backgroundColor": "#F8F8F8"
   },
-
-
-
-
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "page/about-au/about-au",
+        "text": "关于社联"
+      },
+      {
+        "pagePath": "page/join-us/join-us",
+        "text": "加入我们"
+      }
+    ]
+  },
   "networkTimeout": {
     "request": 10000,
     "connectSocket": 10000,
     "uploadFile": 10000,
     "downloadFile": 10000
   },
-
-
   "debug": false
-
 }

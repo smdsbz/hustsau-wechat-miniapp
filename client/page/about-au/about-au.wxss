@@ -1,2 +1,27 @@
 /* page/about-au/about-au.wxss */
 @import "../common/lib/weui.wxss";
+
+
+
+.page-head-a{
+  padding: 100rpx 100rpx 0;
+  text-align: center;
+}
+
+.page-body-text-au{
+  padding: 0 40rpx 0 40rpx;
+  font-size: 36rpx;
+}
+
+
+.scroll-view_H{
+  white-space: nowrap;
+}
+.scroll-view-item{
+  height: 300rpx;
+}
+.scroll-view-item_H{
+  display: inline-block;
+  width: 100%;
+  height: 300rpx;
+}

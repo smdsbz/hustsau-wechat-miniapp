@@ -18,7 +18,7 @@ const controllers = require('../controllers');
 // smdsbz: test url
 router.get('/app-form', async (ctx, next) => {
   // -------------------------
-  ctx.response.body = 'Successfully reached `/app-form` !';
+  ctx.response.body = 'Successfully reached the page `/app-form` !';
   // -------------------------
 });
 

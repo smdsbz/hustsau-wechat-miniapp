@@ -8,7 +8,9 @@ module.exports = async (ctx) => {
    * NOTE: the structure can be seen at Tencent Cloud
    *     site: https://itxbu0dx.qcloud.la/phpmyadmin/
    *
-   * Author:  star-du@github
+   * Author:  
+   * smdsbz@GitHub.com
+   * star-du@github.com
    *
    * Args:
    * ctx  - the context sent to the server
