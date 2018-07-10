@@ -2,6 +2,7 @@
   "pages": [
     "page/about-au/about-au",
     "page/join-us/join-us",
+    "page/my-au-card/my-au-card",
     "page/component/index",
     "page/component/pages/view/view",
     "page/component/pages/scroll-view/scroll-view",
@@ -82,6 +83,9 @@
       {
         "pagePath": "page/join-us/join-us",
         "text": "加入我们"
+      },{
+        "pagePath": "page/my-au-card/my-au-card",
+        "text": "我的社联卡"
       }
     ]
   },
