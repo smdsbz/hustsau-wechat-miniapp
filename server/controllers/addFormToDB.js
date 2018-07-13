@@ -4,11 +4,11 @@ const { mysql } = require('../qcloud');
 module.exports = async (ctx) => {
   /**
    * insert data into my_sql database, table:"join_us"
-   * 
+   *
    * NOTE: the structure can be seen at Tencent Cloud
    *     site: https://itxbu0dx.qcloud.la/phpmyadmin/
    *
-   * Author:  
+   * Author:
    * smdsbz@GitHub.com
    * star-du@github.com
    *
@@ -20,8 +20,10 @@ module.exports = async (ctx) => {
    *                      message, can be found in client-side
    *                      at data.console.error
    * ctx.status         - status code is defined as...
-   *                          900 - unable to insert
-   * ctx.state.data     - json data(array) that contains the
+   *                          200 - status ok
+   *                          900 - duplicated mobile number
+   *                          901 - encounter errors while inserting
+   * ctx.state.data     -  if Successfully inserted: json data(array) which contains the
    *                      `index` of the latest item that is inserted
    */
 

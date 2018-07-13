@@ -135,7 +135,6 @@ Page({
       return;
     }
 
-    // TODO: Display loading animation
     wx.showLoading({
       title: '正在提交',
       mask: true,       // prevent unwanted touch event

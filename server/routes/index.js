@@ -1,4 +1,5 @@
 const addFormToDB = require('../controllers/addFormToDB.js');
+const auCard = require('../controllers/auCard.js');
 /**
  * ajax 服务路由集合
  */
@@ -45,7 +46,18 @@ router.post('/app-form', async (ctx, next) => {
   ctx.response.body = await retval;
 });
 
-
+router.post('/au-card', async (ctx, next) => {
+  let retval = auCard(ctx)
+    .then((retval) => {
+      console.log(retval);
+      return retval;
+    })
+    .catch(err => {
+      console.log(err);
+      return err;
+    });
+  ctx.response.body = await retval;
+});
 
 
 
