@@ -6,7 +6,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    service_providers:['周黑鸭','麦当劳']
+    serviceProviders:['周黑鸭','麦当劳','秀玉红茶坊'],
+    membershipVerified: false
   },
 
   AUMemberLogin:function(e){
@@ -46,12 +47,18 @@ Page({
         console.log(data);
         switch (data.data.code) { // careful with `data.data`
           case 0: {
-            wx.showModal({
-              title: "认证成功",
-              content: "即将显示社团卡",
-              showCancel: false,
-              confirmText: "确认"
-              });
+            // wx.showModal({
+            //   title: "认证成功",
+            //   content: "即将显示社团卡",
+            //   showCancel: false,
+            //   confirmText: "确认"
+            //   });
+            wx.showToast({
+                title: '认证成功！',
+                icon: 'success',
+                duration: 2000
+            });
+            this.setData({membershipVerified : true})
             break;
           }
           case 200: {

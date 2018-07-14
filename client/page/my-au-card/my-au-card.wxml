@@ -3,11 +3,11 @@
 <import src="../common/foot.wxml" />
 
 <view class='container'>
-  <template is="head" data="{{title: 'My AU card'}}" /> 
+  <template is="head" data="{{title: 'My AU card'}}" />
   <view class='page-body'>
+    <!-- show login-page for user if identity isn't verified -->
+    <view wx:if="{{membershipVerified == false}}">
 
-    <view>
-    
     <form bindsubmit="AUMemberLogin" bindreset="">
     <!-- 姓名 -->
     <view class="page-section">
@@ -52,23 +52,25 @@
     </view>
 
     </form>
-    </view>
+  </view>
+  <view wx:else><view class='container'><image src="../../image/au_card_sample.jpg" style='width:100%;'></image></view></view>
+
 
 <view class='container'>
-  <template is="head" data="{{title: '社团卡使用方法'}}" /> 
+  <template is="head" data="{{title: '社团卡使用方法'}}" />
   <view class='page-body-text-au'>
 <text>社团卡使用规范：
 1.sample message</text>
   </view>
   </view>
 
-<view class='container'>
-  <template is="head" data="{{title: '商家列表'}}" /> 
-  <view class='page-body-text-au'>
-<text wx:for="{{service_providers}}">-{{item}}\n</text>
+  <view class='container'>
+    <template is="head" data="{{title: '商家列表'}}" />
+    <view class='page-body-text-au'>
+  <text wx:for="{{serviceProviders}}">-{{item}}\n</text>
+    </view>
   </view>
-  </view>
-  
+
 
 
 
