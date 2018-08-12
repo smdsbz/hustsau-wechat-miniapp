@@ -46,7 +46,7 @@ module.exports = async (ctx) => {
       "faculty-and-class": ctx.request.body["faculty-and-class"],
       "former-experience": ctx.request.body["former-experience"],
       hobbies: ctx.request.body.hobbies,
-      "first-department-choice": ctx.request.body["first-department-choice"],
+      "second-department-choice": ctx.request.body["second-department-choice"],
       "self-explanation": ctx.request.body["self-explanation"],
       "student-id": ctx.request.body["student-id"]
     };

@@ -18,6 +18,7 @@ Page({
       .toJSON().slice(0, 10),
     firstChoice: 0,     // smdsbz: pass `departments[firstChoice]` to back-end
     secondChoice: 0,    //         `-1` for no second choice
+    alternativeAllowed:true
   },
 
   /**
@@ -30,6 +31,13 @@ Page({
    *
    * Return:    None
    */
+  
+  switch1:function (e){
+    this.setData({
+      alternativeAllowed: e.detail.value
+    });
+  },
+
   bindBirthdayChange: function (e) {
     this.setData({
       birthday: e.detail.value
@@ -48,9 +56,15 @@ Page({
       // smdsbz: you cannot choose ‘请选择...’ again, once you chose sth. else
       return;
     }
+    if (e.target.id == "first-department-choice-picker"){
     this.setData({
       firstChoice: e.detail.value
-    });
+    });}
+    else if (e.target.id == "second-department-choice-picker") {
+      this.setData({
+        secondChoice: e.detail.value
+      });
+    }
   },
 
   /**
@@ -68,7 +82,7 @@ Page({
     var formdata = e.detail.value;
     var phonenum = /^\d{11}$/;
     var chinese_name = /^[\u4e00-\u9fa5]{2,8}$/;
-    // console.log(formdata);
+    console.log(formdata);
 
     // console.log(`${CONFIG.database_host}/api/app-form`);
 

@@ -47,7 +47,7 @@
 
     <!-- submit form button -->
     <view class="btn-area">
-      <button type="primary" formType="submit">提交报名表        </button>
+      <button type="primary" formType="submit">提交信息        </button>
     <button formType="reset">重置</button>
     </view>
 
