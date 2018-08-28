@@ -6,6 +6,7 @@
   <template is="head" data="{{title: 'About AU'}}" /> 
   <view class='page-body'>
 
+<!--
     <view>
       <scroll-view class="scroll-view_H" scroll-x="true" style="width: 100%">
         <view id="demo1" class="scroll-view-item_H demo-text-1"></view>
@@ -13,7 +14,8 @@
         <view id="demo3" class="scroll-view-item_H demo-text-3"></view>
       </scroll-view>
     </view>
-
+-->
+<view class='container'><image src="../../image/unique_weizai.png" style='width:400rpx;height:400rpx;padding: 0 180rpx 0;'></image></view>
 
     <view class='container'>
       <view class='page-body-text-au'>

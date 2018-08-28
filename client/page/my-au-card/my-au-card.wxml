@@ -57,20 +57,33 @@
 
 
 <view class='container'>
-  <template is="head" data="{{title: '社团卡使用方法'}}" />
-  <view class='page-body-text-au'>
-<text>社团卡使用规范：
-1.sample message</text>
+  <template is="head" data="{{title: '社团卡基本信息'}}" />
+  <view class='page-body-text-au'  style='text-indent: 40rpx;'
+  >
+    <text decode="{{true}}">社团卡，全称华中科技大学学生社团联合会一卡通，供华中大社团以及社联成员使用 。
+    社团卡是一张身份卡：
+      &emsp;社团卡是社团（联）成员身份的象征，通过对社团（联）成员信息进行简洁的汇总，形成优良的管理体系，以促使社团和社联的共同发展。
+    社团卡是一张优惠卡：
+      &emsp;社团卡合作了一批商家，持有电子社团卡的同学前往合作的商家消费即可获得相应优惠。</text>
+  
   </view>
-  </view>
+</view>
 
+<view class='container'>
+  <template is="head" data="{{title: '社团卡使用规则'}}" />
+  <view class='page-body-text-au' style='text-indent: 40rpx;'>
+    <text>社团成员首先需要填写个人基本信息完成社团卡注册，注册成功之后前往商家消费时，只需向商家出示‘我的社团卡’即可获得相应优惠。
+    </text>
+  </view>
+</view>
+<!--
   <view class='container'>
     <template is="head" data="{{title: '商家列表'}}" />
     <view class='page-body-text-au'>
   <text wx:for="{{serviceProviders}}">-{{item}}\n</text>
     </view>
   </view>
-
+-->
 
 
 

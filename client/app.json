@@ -78,14 +78,20 @@
     "list": [
       {
         "pagePath": "page/about-au/about-au",
-        "text": "关于社联"
+        "text": "关于社联",
+        "iconPath": "image/icon_info.png",
+        "selectedIconPath": "image/icon_info.png"
       },
       {
         "pagePath": "page/join-us/join-us",
-        "text": "加入我们"
+        "text": "加入我们",
+        "iconPath": "image/icon_join.png",
+        "selectedIconPath": "image/icon_join.png"
       },{
         "pagePath": "page/my-au-card/my-au-card",
-        "text": "我的社团卡"
+        "text": "我的社团卡",
+        "iconPath": "image/icon_id.png",
+        "selectedIconPath": "image/icon_id.png"
       }
     ]
   },
