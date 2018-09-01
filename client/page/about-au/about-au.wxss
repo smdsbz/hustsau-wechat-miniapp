@@ -2,15 +2,25 @@
 @import "../common/lib/weui.wxss";
 
 
+page{
+  background-color: white;
+}
+
+.page-head-title{
+  color:black;
+  font-size: 40rpx;
+}
 
 .page-head-a{
   padding: 100rpx 100rpx 0;
+  font-size: 30px;
   text-align: center;
 }
 
 .page-body-text-au{
-  padding: 0 40rpx 0 40rpx;
-  font-size: 36rpx;
+   color:#808080;
+  padding: 0 40rpx 250rpx 40rpx;
+font-size: 32rpx;
 }
 
 

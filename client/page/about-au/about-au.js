@@ -1,6 +1,11 @@
 // page/about-au/about-au.js
 Page({
 
+  toJoinUs: function () {
+    wx.switchTab({
+      url: '../join-us/join-us'
+    })},
+
   to36Building: function () {
     // wx.switchTab({
     //   url: '../join-us/join-us'
