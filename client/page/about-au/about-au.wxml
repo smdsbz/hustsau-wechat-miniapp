@@ -176,6 +176,15 @@
       </view>
     </view>
 
+<view class='container'><image src="../../image/caijianwei.png" style='width:400rpx;height:400rpx;padding: 0 180rpx 0 ;'></image></view>
+
+      <view class='page-body-text-au'>
+        <template is="head_a" data="{{title: '社团财务监督委员会（财监委）'}}" />
+        <text>
+        1.负责各个社团活动财务报销的申请与审核、进行社团财务的监督，与各社团紧密联系、负责社团活动监督 
+        2.负责部门内部任务监督分配工作、进行会议通知和会议记录等
+        </text>
+      </view>
 
     <view class="container" style="text-align:center;">
     <template is="head_a" data="{{title: '现在就加入'}}" />

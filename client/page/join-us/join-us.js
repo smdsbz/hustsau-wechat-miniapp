@@ -12,7 +12,7 @@ Page({
     today: new Date().toJSON().slice(0, 10),
     departments: ['请选择...', '财务部', '秘书部', '人力资源部', '社团部', '行政监察部',
       '公共关系部', '外联部', '媒体部', '宣传部', '思存工作室',
-      '新媒体工作室', '文艺拓展部', '社团外联企划部'
+      '新媒体工作室', '文艺拓展部', '社团外联企划部', '财监委'
     ],
     birthday: new Date(new Date().getFullYear() - 18, 0, 1) // smdsbz: assuming they are all 18-years old
       .toJSON().slice(0, 10),
