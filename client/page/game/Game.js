@@ -160,7 +160,7 @@ class Game {
     sendRecord() {
         const app = getApp();
         const that = this;
-        app.getUserInfo(function (userInfo) {
+      /*  app.getUserInfo(function (userInfo) {
             // 要发送到服务端的数据，正常情况下应该把openId发过去的，懒得搞了
             const record = {
                name: userInfo.nickName,
@@ -175,6 +175,7 @@ class Game {
                 method: 'POST'
             });
         });
+        */
     }
 
     /**
