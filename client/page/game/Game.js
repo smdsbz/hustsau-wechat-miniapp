@@ -41,7 +41,7 @@ class Game {
 
         // 只能手动bind this了
         // 绘制下一帧，注意刷新率
-        this.interval = setInterval(this.nextFrame.bind(this), 80);
+        this.interval = setInterval(this.nextFrame.bind(this), 40);
 
         // 将page的状态改为游戏中
         this.statusCallback(1);
@@ -73,15 +73,15 @@ class Game {
 
         // 第二步，随机生成障碍物
         // 每隔固定帧数就生成一个障碍物
-        if (this.frameCount % 13 == 0) {
+        if (this.frameCount % 20 == 0) {
             let x = this.canvasWidth;  // 从x轴的哪里开始绘制
             let minHeight = 20, maxHeight = 200;  // 障碍物的高度限制
             let trueHeight = Math.floor(Math.random() * (maxHeight - minHeight + 1) + minHeight);
-            let minGap = 50, maxGap = 200;  // 空隙的大小
+            let minGap = 50, maxGap = 150;  // 空隙的大小
             let trueGap = Math.floor(Math.random() * (maxGap - minGap + 1) + minGap);
             // 障碍物的宽度都是10，注意给它们相同的x轴上的速度
-            this.obstacles.push(new Component({ x: x, y: 0, width: 10, height: trueHeight, xSpeed: -10, context: this.ctx }));
-            this.obstacles.push(new Component({ x: x, y: trueHeight + trueGap, width: 10, height: this.canvasHeight - trueHeight - trueGap, xSpeed: -10, context: this.ctx }));
+            this.obstacles.push(new Component({ x: x, y: 0, width: 10, height: trueHeight, xSpeed: -5, context: this.ctx }));
+            this.obstacles.push(new Component({ x: x, y: trueHeight + trueGap, width: 10, height: this.canvasHeight - trueHeight - trueGap, xSpeed: -5, context: this.ctx }));
         }
 
         // 第三步，如果障碍物超出屏幕范围了，就丢掉，感觉这里可以优化下
@@ -182,14 +182,14 @@ class Game {
      * 玩家角色上升
      */
     up() {
-        this.role.newYAcc = -1;
+        this.role.newYAcc = -0.5;
     }
 
     /**
      * 玩家角色下降
      */
     down() {
-        this.role.newYAcc = 1;    
+        this.role.newYAcc = 0.5;    
     }
 }
 
