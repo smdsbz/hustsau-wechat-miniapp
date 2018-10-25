@@ -188,10 +188,10 @@
 
 
     <view class="container" style="text-align:center;">
-    <template is="head_a" data="{{title: '现在就加入'}}" />
+    <!--template is="head_a" data="{{title: '现在就加入'}}" />
 <button name="to_join_us"
           bindtap="toJoinUs"
-          type="primary" size="default">加入我们</button>
+          type="primary" size="default">加入我们</button -->
       <view style="margin-top:20rpx"></view>
        <template is="head_a" data="{{title: '我们在哪里'}}" />
       <!-- button name="SUBuilding"

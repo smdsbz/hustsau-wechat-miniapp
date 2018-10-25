@@ -29,7 +29,12 @@ class Component {
             this.ctx.setFontSize(this.fontSize);
             this.ctx.fillText(this.text, this.x, this.y);
         } else if (this.type == "bird") {
-            this.ctx.drawImage("../../image/bird.png", this.x, this.y, this.width, this.height);
+          if (this.yAcc == 1)
+            this.ctx.drawImage("../../image/Vzai_down.png", this.x, this.y, this.width, this.height);
+          else if (this.yAcc == -1)
+            this.ctx.drawImage("../../image/Vzai_up.png", this.x, this.y, this.width, this.height);
+          else
+            this.ctx.drawImage("../../image/Vzai_normal.png", this.x, this.y, this.width, this.height);
         } else {
             this.ctx.rect(this.x, this.y, this.width, this.height);
             this.ctx.fill();

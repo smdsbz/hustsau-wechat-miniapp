@@ -41,7 +41,7 @@ class Game {
 
         // 只能手动bind this了
         // 绘制下一帧，注意刷新率
-        this.interval = setInterval(this.nextFrame.bind(this), 60);
+        this.interval = setInterval(this.nextFrame.bind(this), 80);
 
         // 将page的状态改为游戏中
         this.statusCallback(1);
@@ -189,7 +189,7 @@ class Game {
      * 玩家角色下降
      */
     down() {
-        this.role.newYAcc = 1;
+        this.role.newYAcc = 1;    
     }
 }
 
