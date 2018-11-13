@@ -56,6 +56,21 @@
   <view wx:else><view class='container'><image src="../../image/au_card_sample.jpg" style='width:100%;'></image></view></view>
 
 
+
+  <view class='container'>
+    <template is="head" data="{{title: '商家信息'}}" />
+    <view class='page-body-text-au' wx:for="{{array}}">
+      <text decode="{{true}}">
+      商家:{{item.serviceProviders}}
+      类型:{{item.type}}
+      地址:{{item.address}}
+      联系方式:{{item.tel}}
+      赞助形式:{{item.content}}\n
+      </text>
+    </view>
+  </view>
+
+
 <view class='container'>
   <template is="head" data="{{title: '社团卡基本信息'}}" />
   <view class='page-body-text-au'  style='text-indent: 40rpx;'
@@ -76,14 +91,7 @@
     </text>
   </view>
 </view>
-<!--
-  <view class='container'>
-    <template is="head" data="{{title: '商家列表'}}" />
-    <view class='page-body-text-au'>
-  <text wx:for="{{serviceProviders}}">-{{item}}\n</text>
-    </view>
-  </view>
--->
+
 
 
 
