@@ -75,9 +75,9 @@ class Game {
         // 每隔固定帧数就生成一个障碍物
         if (this.frameCount % 20 == 0) {
             let x = this.canvasWidth;  // 从x轴的哪里开始绘制
-            let minHeight = 20, maxHeight = 200;  // 障碍物的高度限制
+            let minHeight = 40, maxHeight = 140;  // 障碍物的高度限制
             let trueHeight = Math.floor(Math.random() * (maxHeight - minHeight + 1) + minHeight);
-            let minGap = 50, maxGap = 150;  // 空隙的大小
+            let minGap = 80, maxGap = 125;  // 空隙的大小
             let trueGap = Math.floor(Math.random() * (maxGap - minGap + 1) + minGap);
             // 障碍物的宽度都是10，注意给它们相同的x轴上的速度
             this.obstacles.push(new Component({ x: x, y: 0, width: 10, height: trueHeight, xSpeed: -5, context: this.ctx }));
@@ -85,16 +85,16 @@ class Game {
         }
 
         // 第三步，如果障碍物超出屏幕范围了，就丢掉，感觉这里可以优化下
-        let count = 0;
+       // let count = 0;
         for (let obstacle of this.obstacles) {
             if (obstacle.x < 0)
-                count++;
-            else
-                break;
+                this.obstacles.shift();
+            //else
+            //    break;
         }
-        for (let i = 0; i < count; i++) {
-            this.obstacles.shift();
-        }
+       // for (let i = 0; i < count; i++) {
+       //     this.obstacles.shift();
+       // }
 
         // 第三步，重绘所有组件
         this.role.newPos();

@@ -29,9 +29,9 @@ class Component {
             this.ctx.setFontSize(this.fontSize);
             this.ctx.fillText(this.text, this.x, this.y);
         } else if (this.type == "bird") {
-          if (this.yAcc == 1)
+          if (this.yAcc > 0)
             this.ctx.drawImage("../../image/Vzai_down.png", this.x, this.y, this.width, this.height);
-          else if (this.yAcc == -1)
+          else if (this.yAcc < 0)
             this.ctx.drawImage("../../image/Vzai_up.png", this.x, this.y, this.width, this.height);
           else
             this.ctx.drawImage("../../image/Vzai_normal.png", this.x, this.y, this.width, this.height);
@@ -90,10 +90,10 @@ class Component {
 
         // 因为自己的角色是只鸟，形状不规则，碰撞检测很难搞，偷个懒
         if (this.type == 'bird') {
-            myleft += 5;
-            myright -= 5;
-            mytop += 5;
-            mybottom -= 5;
+            myleft +=   10;
+            myright -=  10;
+            mytop +=    7;
+            mybottom -= 7;
         }
 
         if ((mybottom < othertop) || (mytop > otherbottom) || (myright < otherleft) || (myleft > otherright)) {
