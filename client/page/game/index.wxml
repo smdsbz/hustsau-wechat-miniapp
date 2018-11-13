@@ -7,12 +7,12 @@
     {{status===1?'按住起飞':''}}
     {{status===2?'重新挑战':''}}
   </button>
-  <view class='container'>
+  <!-- <view class='container'>
       <view class='page-body-text-au'>
         <text>
          发送2500+分截图至微仔QQ（2434075395）
          赢取社团文化节游园会VIP门票和精美礼品!
         </text>
       </view>
-  </view>
+  </view> -->
 </view>
