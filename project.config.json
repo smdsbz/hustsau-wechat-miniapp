@@ -1,4 +1,5 @@
 {
+	"cloudfunctionRoot": "cloudfunctions/",
 	"client": "client/",
 	"svr": "server/",
 	"miniprogramRoot": "client/",
@@ -8,6 +9,8 @@
 	},
 	"appid": "wx605fd2d564055740",
 	"projectname": "HustsauEntrance",
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
 	"condition": {
 		"search": {
 			"current": -1,

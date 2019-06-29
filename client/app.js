@@ -3,6 +3,19 @@ const openIdUrl = require('./config').openIdUrl
 App({
   onLaunch: function () {
     console.log('App Launch')
+    if (!wx.cloud) {
+      console.error("请使用 2.2.3 或以上的基础库以使用云能力");
+      wx.showToast({
+        title: "请升级微信以使用小程序",
+        icon: "none",
+        duration: 60000
+      });
+    } else {
+      wx.cloud.init({
+        traceUser: true,
+        env: "test-x2eg6"
+      });
+    }
   },
   onShow: function () {
     console.log('App Show')
