@@ -4,7 +4,8 @@
     "page/join-us/join-us",
     "page/my-au-card/my-au-card",
     "page/game/index",
-    "page/list/index"
+    "page/list/index",
+    "page/intro/intro"
   ],
   "window": {
     "navigationBarTextStyle": "black",
@@ -29,6 +30,18 @@
         "text": "加入我们",
         "iconPath": "image/icon_join.png",
         "selectedIconPath": "image/icon_join.png"
+      },
+      {
+        "pagePath": "page/intro/intro",
+        "text": "秋招宣传",
+        "iconPath": "image/icon_component.png",
+        "selectedIconPath": "image/icon_component.png"
+      },
+      {
+        "pagePath": "page/game/index",
+        "text": "小游戏",
+        "iconPath": "image/icon_info.png",
+        "selectedIconPath": "image/icon_info.png"
       }
     ]
   },
