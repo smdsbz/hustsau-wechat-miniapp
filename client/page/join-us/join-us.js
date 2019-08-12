@@ -294,9 +294,9 @@ Page({
    */
   submitJoinUsForm: function (e) {
     var formsData = e.detail.value;
-    console.log(formsData);
+    console.log('formData',formsData);
     let formObj = this.toFormObject(formsData);
-    console.log(formObj);
+    console.log('formObj',formObj);
     // has error
     if (formObj.hasOwnProperty("err")) {
       wx.showModal({
@@ -335,7 +335,7 @@ Page({
         mobile: formObj.mobile
       }).get()
       .then(res => {
-        console.log(res);
+        // console.log(res);
         if (res.data.length !== 0) {
           wx.showModal({
             title: "请勿重复提交",
@@ -345,7 +345,7 @@ Page({
           });
           wx.hideLoading()
         } else {
-          console.log(res);
+          // console.log(res);
           db.collection("joinUs")
             .add({
               data: formObj
