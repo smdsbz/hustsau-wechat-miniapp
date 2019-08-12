@@ -14,15 +14,15 @@ Page({
   data: {
     startDate: "1990-01-01",
     today: new Date().toJSON().slice(0, 10),
-    departments: ['请选择...', '财监委','财务部', '秘书部', '人力资源部', '社团部', '行政监察部',
+    departments: ['请选择...', '财监委', '财务部', '秘书部', '人力资源部', '社团部', '行政监察部',
       '公共关系部', '外联部', '媒体部', '宣传部', '思存工作室',
       '新媒体工作室', '文艺拓展部', '社团外联企划部'
     ],
     birthday: new Date(new Date().getFullYear() - 18, 0, 1) // smdsbz: assuming they are all 18-years old
       .toJSON().slice(0, 10),
-    firstChoice: 0,     // smdsbz: pass `departments[firstChoice]` to back-end
-    secondChoice: 0,    //         `-1` for no second choice
-    alternativeAllowed:true
+    firstChoice: 0, // smdsbz: pass `departments[firstChoice]` to back-end
+    secondChoice: 0, //         `-1` for no second choice
+    alternativeAllowed: true
   },
 
   /**
@@ -35,8 +35,8 @@ Page({
    *
    * Return:    None
    */
-  
-  switch1:function (e){
+
+  switch1: function (e) {
     this.setData({
       alternativeAllowed: e.detail.value
     });
@@ -55,16 +55,17 @@ Page({
   },
 
   bindDepartmentChange: function (e) {
-    if (this.data.firstChoice != 0  // smdsbz: HACK: Don't delete `this`!
-      && e.detail.value == 0) {
+    if (this.data.firstChoice != 0 // smdsbz: HACK: Don't delete `this`!
+      &&
+      e.detail.value == 0) {
       // smdsbz: you cannot choose ‘请选择...’ again, once you chose sth. else
       return;
     }
-    if (e.target.id == "firstDepartmentChoice-picker"){
-    this.setData({
-      firstChoice: e.detail.value
-    });}
-    else if (e.target.id == "secondDepartmentChoice-picker") {
+    if (e.target.id == "firstDepartmentChoice-picker") {
+      this.setData({
+        firstChoice: e.detail.value
+      });
+    } else if (e.target.id == "secondDepartmentChoice-picker") {
       this.setData({
         secondChoice: e.detail.value
       });
@@ -225,13 +226,13 @@ Page({
    *                          If there is any error, a 'err' property
    *                          will be found in the return Object.
    */
-  toFormObject: function(data) {
+  toFormObject: function (data) {
     const phonenum = /^\d{11}$/;
     const chineseName = /^[\u4e00-\u9fa5]{2,8}$/;
-    const departments= ['请选择...', '财监委','财务部', '秘书部', '人力资源部', '社团部', '行政监察部',
-    '公共关系部', '外联部', '媒体部', '宣传部', '思存工作室',
-    '新媒体工作室', '文艺拓展部', '社团外联企划部'
-  ];
+    const departments = ['请选择...', '财监委', '财务部', '秘书部', '人力资源部', '社团部', '行政监察部',
+      '公共关系部', '外联部', '媒体部', '宣传部', '思存工作室',
+      '新媒体工作室', '文艺拓展部', '社团外联企划部'
+    ];
 
     // trim and judge
     const trimArr = [
@@ -246,25 +247,26 @@ Page({
       };
     }
     // end trim and judge
-    
+
     if (data.firstDepartmentChoice == 0) return {
-      err: "请填写您要加入的部门"}
+      err: "请填写您要加入的部门"
+    }
 
     if (!(chineseName.test(data.name))) return {
       err: "请填写正确的中文姓名"
     };
 
     if (!(phonenum.test(data.mobile))) return {
-      err:  "请填写您的手机号码！我们将以短信的形式通知您面试地点！\n如已填写，检查下是否填错了？"
+      err: "请填写您的手机号码！我们将以短信的形式通知您面试地点！\n如已填写，检查下是否填错了？"
     };
 
     // - if allow alternative department
-    if (data["allow-alternative-department"] == true
-    && data["secondDepartmentChoice"] == 0) return {
+    if (data["allow-alternative-department"] == true &&
+      data["secondDepartmentChoice"] == 0) return {
       err: "请选择您的备选部门！\n或者取消勾选「是否服从调剂」！"
     }
 
-    if (!data["allow-alternative-department"]) 
+    if (!data["allow-alternative-department"])
       data.secondDepartmentChoice = null;
 
     return {
@@ -308,7 +310,7 @@ Page({
 
     wx.showLoading({
       title: '正在提交',
-      mask: true,       // prevent unwanted touch event
+      mask: true, // prevent unwanted touch event
     });
 
     /* 
@@ -317,7 +319,46 @@ Page({
                             加入云开发数据库joinUs
                       -> 若已有相应表单，提示“请勿重复提交” 并返回 
     */
+    db.collection("joinUs").orderBy("formid", "desc").limit(3).get()
+      .then(res => {
+        console.log('res', res.data);
+        let maxFormid = (new Date().getFullYear() - 2000) + (new Date().getMonth() < 8 ? "Spri" : "Fall") + "00001";
+        //生成初始id
+        if (res.data[0]) maxFormid = res.data[0].formid
+        console.log("[max formid]", maxFormid);
+        formObj.formid = "19Fall" + ((maxFormid.slice(6, 11)) * 1 + 100001).toString().slice(1, 6);
+        console.log("[formObj]", formObj);
+      })
 
+
+    db.collection("joinUs").where({
+        mobile: formObj.mobile
+      }).get()
+      .then(res => {
+        console.log(res);
+        if (res.data.length !== 0) {
+          wx.showModal({
+            title: "请勿重复提交",
+            content: "手机号重复",
+            showCancel: false,
+            confirmText: "再去改改"
+          });
+          wx.hideLoading()
+        } else {
+          console.log(res);
+          db.collection("joinUs")
+            .add({
+              data: formObj
+            })
+            .then(() => {
+              wx.showToast({
+                title: '提交成功',
+                icon: 'success'
+              });
+              wx.hideLoading();
+            })
+        }
+      })
 
     // wx.hideLoading();
 
