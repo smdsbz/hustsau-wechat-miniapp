@@ -1,15 +1,13 @@
 {
   "pages": [
-    "page/about-au/about-au",
+    "page/intro/intro",
     "page/join-us/join-us",
-    "page/my-au-card/my-au-card",
+    "page/about-au/about-au",
     "page/game/index",
-    "page/list/index",
-    "page/intro/intro"
+    "page/list/index"
   ],
   "window": {
     "navigationBarTextStyle": "black",
-    "navigationBarTitleText": "模板",
     "navigationBarBackgroundColor": "#F8F8F8",
     "backgroundColor": "#F8F8F8"
   },
@@ -20,8 +18,14 @@
     "backgroundColor": "#ffffff",
     "list": [
       {
-        "pagePath": "page/about-au/about-au",
+        "pagePath": "page/intro/intro",
         "text": "关于社联",
+        "iconPath": "image/icon_menu.png",
+        "selectedIconPath": "image/icon_menu.png"
+      },
+      {
+        "pagePath": "page/about-au/about-au",
+        "text": "部门介绍",
         "iconPath": "image/icon_info.png",
         "selectedIconPath": "image/icon_info.png"
       },
@@ -30,18 +34,6 @@
         "text": "加入我们",
         "iconPath": "image/icon_join.png",
         "selectedIconPath": "image/icon_join.png"
-      },
-      {
-        "pagePath": "page/intro/intro",
-        "text": "秋招宣传",
-        "iconPath": "image/icon_component.png",
-        "selectedIconPath": "image/icon_component.png"
-      },
-      {
-        "pagePath": "page/game/index",
-        "text": "小游戏",
-        "iconPath": "image/icon_info.png",
-        "selectedIconPath": "image/icon_info.png"
       }
     ]
   },

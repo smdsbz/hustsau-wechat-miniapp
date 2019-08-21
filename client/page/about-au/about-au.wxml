@@ -3,7 +3,7 @@
 <import src="../common/foot.wxml" />
 
 <view class='container'>
-  <template is="head" data="{{title: 'About AU'}}" /> 
+  <template is="head" data="{{title: '部门介绍'}}" /> 
   <view class='page-body'>
 
 <!--
@@ -18,14 +18,19 @@
 <!--
 <view class='container'><image src="../../image/unique_weizai.png" style='width:400rpx;height:400rpx;padding: 0 180rpx 0;'></image></view>
 -->
-<view class='container'><image src="../../image/caijianwei.png" style='width:400rpx;height:400rpx;padding: 0 180rpx 0 ;'></image></view>
+
+<view class='container'>
+<image src="../../image/department_structure.png" style='width:750rpx;height:400rpx;padding:0 0;'></image>
+</view>
+
+<view class='container'><image src="../../image/caijianwei.png" style='width:400rpx;height:400rpx;padding: 100rpx 180rpx 0 ;'></image></view>
       <view class='page-body-text-au'>
         <template is="head_a" data="{{title: '社团财务监督委员会（财监委）'}}" />
         <text>
         1.负责各个社团活动财务报销的申请与审核、进行社团财务的监督，与各社团紧密联系、负责社团活动监督 
         2.负责部门内部任务监督分配工作、进行会议通知和会议记录等
         </text>
-      </view>
+</view>
 
 
 <view class='container'><image src="../../image/finance.png" style='width:400rpx;height:400rpx;padding: 100rpx 0 0 180rpx;'></image></view>
@@ -57,9 +62,9 @@
       <view class='page-body-text-au'>
         <template is="head_a" data="{{title: '人力资源部'}}" />
         <text>
-        1.社联干部招聘、调整，社联干部工作绩效考核评优
-        2.对社联合社团干部进行培训；引导协会会长做好社团工作
-        3.管理组织内部人事信息，建设传承社联组织文化
+        1.社联人员招聘，培训，工作绩效考核评优。
+        2.协助社团会长完成社团换届事项。
+        3.管理组织内部人事信息和建设传承社联组织文化。
         </text>
       </view>
 
@@ -81,10 +86,10 @@
       <view class='page-body-text-au'>
         <template is="head_a" data="{{title: '行政监察部'}}" />
         <text>
-        1.承担社联面向社团的行政监督、年终考核以及评定星级等工作  
-        2.行政组：负责校内所有新社团的注册成立、问题社团的整改与取缔等工作 
-        3.评分组：负责所有校级社团的日常考核评分等工作 
-        4.常务组：负责部门内部、部门之间文化建设工作，以及社团会员维权工作
+        1.承担社联面向社团的行政监督、年终考核以及评定星级等工作；
+        2.行政组:负责校内所有申请成立的学生社团的审批和注册，对问题社团进行整顿和取缔；
+        3.评分组:负责对校内所有校级学生社团进行日常考核，包括内建考核、活动考核等；
+        4.常务组:负责部门内部、部门之间文化建设工作，以及社团会员维权工作。
         </text>
       </view>
 
@@ -101,6 +106,18 @@
         </text>
       </view>
 
+      <view class='container'><image src="../../image/pr-planning.png" style='width:400rpx;height:400rpx;padding: 0 180rpx 0;'></image></view>
+
+      <view class='page-body-text-au'>
+        <template is="head_a" data="{{title: '社团外联企划部'}}" />
+        <text>
+        1.为社团提供或寻求包括师资、活动赞助、长期商业合作在内的各种资源，包括学校社团外联活动的协助与监管 
+        2.加强社联与社团之间的联系，利用社联的资源帮助社团发展 
+        3.通过社团骨干培训体系，提升部员的整体素质，为社团培养管理型精英人才
+        </text>
+      </view>
+    </view>
+
 
       <view class='container'><image src="../../image/public-relation2.png" style='width:400rpx;height:400rpx;padding: 0 180rpx 0;'></image></view>
       <view class='page-body-text-au'>
@@ -108,7 +125,6 @@
         <text>
         1.沟通社联与校外企业，为社联活动提供赞助
         2.与企业建立并维护长期合作关系，搭建校企合作的平台
-        3.商业品牌的校园宣传与推广，协助举办大型活动
         </text>
       </view>
 
@@ -118,8 +134,9 @@
       <view class='page-body-text-au'>
         <template is="head_a" data="{{title: '媒体部'}}" />
         <text>
-       1.视觉创作组：社联社团大型活动图片与摄影报道、制作视频、写真拍摄。培养富有创意，掌握各种软件、摄影、视频制作的人才 
-       2.网络文编组：负责社联社团各类活动新闻报道、原创文中的软文写作并管理线上新闻版块。培养文字能力强，熟悉新闻的人才
+        专业校园自媒体创作团队手把手教学，需要脑洞大开的你，负责人有经验和相关设备者优先
+        1.视觉创作组：为社团社联各大校园活动提供摄影、摄像、视频制作以及宣传支持，培养富有创作力的，能够掌握媒体和相关软件技术的自媒体人才；
+        2.文编策划组：为大小活动提供摄影、视频等宣传文案的策划以及原创网络软文写作，培养文字能力强，具有创意脑洞的新媒体人才。
         </text>
       </view>
 
@@ -135,21 +152,7 @@
         </text>
       </view>
 
-
-      <view class='container'><image src="../../image/sicunstudio.png" style='width:400rpx;height:400rpx;padding: 0 180rpx 0;'></image></view>
-
-      <view class='page-body-text-au'>
-        <template is="head_a" data="{{title: '思存工作室'}}" />
-        <text>
-        1.为社联内部网站以及社团网提供网站制作和服务器维护的技术支持 
-        2.为社联和社团的各项活动提供硬件和软件方面的技术支持 
-        3.社联内部的技术交流和前沿IT技术沟通培训平台
-        </text>
-      </view>
-
-
-      <view class='container'><image src="../../image/new-media.png" style='width:400rpx;height:400rpx;padding: 0 180rpx 0;'></image></view>
-
+       <view class='container'><image src="../../image/new-media.png" style='width:400rpx;height:400rpx;padding: 0 180rpx 0;'></image></view>
       <view class='page-body-text-au'>
         <template is="head_a" data="{{title: '新媒体工作室'}}" />
         <text>
@@ -161,46 +164,51 @@
       </view>
 
 
+      <view class='container'><image src="../../image/sicunstudio.png" style='width:400rpx;height:400rpx;padding: 0 180rpx 0;'></image></view>
+
+      <view class='page-body-text-au'>
+        <template is="head_a" data="{{title: '思存工作室'}}" />
+        <text>
+        1. 为社联内部社团提供网站制作和服务器维护的技术支持
+        2. 为社联和社团的各项活动提供硬件和软件方面的技术支持
+        3. 互联网产品设计运营（例如：微信小程序）
+
+        </text>
+      </view>
+
+
+
       <view class='container'><image src="../../image/wenyibu.png" style='width:400rpx;height:400rpx;padding: 0 180rpx 0 ;'></image></view>
 
       <view class='page-body-text-au'>
         <template is="head_a" data="{{title: '文艺拓展部'}}" />
         <text>
-        1.经理人组：统筹管理表演队，负责表演队日常排练及演出事务
-        2.常务组：部门常务资料整理和更新，表演队评分，相关演出部门活动的策划
-        3.拓展组：拓展推广表演队，收集整合校内演艺资源，与社联演艺活动有关的对外交流
+        文艺拓展部内部分为策划组、筹备组、场控组、常务组。部门主要负责：
+        1、对接引导学生社团表演队，整合校内文艺资源。
+        2、筹办社联晚会，协办社团晚会。负责内容包括晚会的策划、节目的筹备联络以及晚会现场场控。
         </text>
       </view>
 
 
-      <view class='container'><image src="../../image/pr-planning.png" style='width:400rpx;height:400rpx;padding: 0 180rpx 0;'></image></view>
-
-      <view class='page-body-text-au'>
-        <template is="head_a" data="{{title: '社团外联企划部'}}" />
-        <text>
-        1.为社团提供或寻求包括师资、活动赞助、长期商业合作在内的各种资源，包括学校社团外联活动的协助与监管 
-        2.加强社联与社团之间的联系，利用社联的资源帮助社团发展 
-        3.通过社团骨干培训体系，提升部员的整体素质，为社团培养管理型精英人才
-        </text>
-      </view>
-    </view>
+      
 
 
 
     <view class="container" style="text-align:center;">
-    <!--template is="head_a" data="{{title: '现在就加入'}}" />
+    <template is="head_a" data="{{title: '现在就加入'}}" />
 <button name="to_join_us"
           bindtap="toJoinUs"
-          type="primary" size="default">加入我们</button -->
+          type="primary" size="default">加入我们</button>
       <view style="margin-top:20rpx"></view>
        <template is="head_a" data="{{title: '我们在哪里'}}" />
-      <!-- button name="SUBuilding"
+      <button name="SUBuilding"
           bindtap="toSUBuilding"
-          type="primary" size="default">去大学生活动中心</button -->
+          type="primary" size="default">去大学生活动中心</button>
       <button name="36Building"
           bindtap="to36Building"
           type="primary" size="default">去 36 号楼</button>
     </view>
+
   </view>
 </view>
 

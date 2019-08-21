@@ -2,28 +2,87 @@
 <import src="../common/head.wxml" />
 <import src="../common/foot.wxml" />
 <view class='container'>
-  <template is="head" data="{{title: '秋招介绍(demo)'}}" /> 
+  <template is="head" data="{{title: '社联介绍'}}" /> 
   <view class='page-body'>
-
-    <view class="page-section tc">
-    <video id="myVideo" src="cloud://test-x2eg6.7465-test-x2eg6-1256427422/文化节开场视频.mp4" binderror="videoErrorCallback" danmu-list="{{danmuList}}" enable-danmu danmu-btn controls></video>
-
-    <view class="weui-cells">
-      <view class="weui-cell weui-cell_input">
-        <view class="weui-cell__hd">
-          <view class="weui-label">弹幕内容</view>
-        </view>
-        <view class="weui-cell__bd">
-          <input bindblur="bindInputBlur" class="weui-input" type="text" placeholder="在此处输入弹幕内容" />
-        </view>
-      </view>
-    </view>
-    <view class="btn-area">
-      <button bindtap="bindSendDanmu" class="page-body-button" type="primary" formType="submit">发送弹幕</button>
-      <button bindtap="bindPlay" class="page-body-button" type="primary">播放</button>
-      <button bindtap="bindPause" class="page-body-button" type="primary">暂停</button>
-    </view>
+  <view class='page-body-text-au'>
+      <text style="color:black;">
+      华中大社联全称华中科技大学学生社团联合会，是学校党委领导、学校团委指导的校级学生组织，自成立至今，社联一直以“增大学景，滋大学情，弘大学德，扬大学名”为不懈追求的目标；以“服务于社团，服务于会员”为恒久不变的宗旨，协助校团委学生社团管理部做好学生社团管理和服务的延伸工作。
+      </text>
   </view>
+  <view class='page-body-text-au'>
+      <template is="head_a" data="{{title: 'Logo'}}" />
+      <text style="">
+      Logo用于学生组织或团体的识別和推广，通过形象的徽标可以让广大师生记住组织主体和品牌文化。
+      </text>
+      <view class='container'><image src="../../image/logo.jpg" style='width:400rpx;height:400rpx;padding: 100rpx 150rpx 0 ;'></image></view>
+      <text style="color:black">
+      用象征希望，充满生机的“社联绿”为主色调。似初生的太阳，在成长；似翻腾的海浪，在前进。以“オ”为中心，体现社联重视人才；以“团”为外形，体现社联团结包容。
+      </text>
+  </view>
+
+  <view class='page-body-text-au'>
+      <template is="head_a" data="{{title: 'Slogan'}}" />
+      <text style="">
+      Slogan对广大师生的意义在于其所传递的学生组织的运行理念，它所强调的是一个学生组织和其主办活动最为突出的特点。
+      </text>
+
+      <text style="color:black;" decode="{{true}}">
+        &emsp;&emsp;激情澎湃，社团地带；
+        &emsp;&emsp;愿我AU，荣耀常在！
+      </text>
+      <text style="color:black">  
+      永远充满激情、斗志昂扬，因为这是社团的地带。永远骄傲自信、追求卓越，因为这是社联的舞台。这就是社联，就是每一个社联人！
+      </text>
+  </view>
+
+  <view class='page-body-text-au'>
+      <template is="head_a" data="{{title: 'Mascot'}}" />
+      <text style="">
+      Mascot是组织的文化产物，在发展中创造出赋予了象征内容及意义的瑞兽，去满足内心美好愿望的心理需求。吉祥物是对外宣传的有效方式之ー，更是组织文化的载体。
+      </text>
+      <view class='container'><image src="../../image/weizai.jpg" style='width:400rpx;height:400rpx;padding: 100rpx 150rpx 0 ;'></image></view>
+      <text style="color:black">
+      社联微仔作为华中大社联的吉祥物，一方面担当着微信、QQ等公众平台的主页君；另ー方面也是社联周边（地图、玩偶、徽章等）的主要题材。微仔作为社联的“形象代言人”，用乐观向上的态度感染着每一位huster。
+      </text>
+  </view>
+
+  <view class='page-body-text-au'>
+      <template is="head_a" data="{{title: '品牌项目一  社团文化节'}}" />
+      <text style="color:black">
+      无与伦比的盛大晚会，包罗万象的社团PARTY，缤纷多彩的社团活动……社团文化节通通带给你。
+      露天大PARTY——游园会：游戏玩不尽，奖品拿不完
+      高端视觉盛宴——晚会：气氛high不够，精彩享不停。
+      最炫社团风——系列活动：没有办不到，只有想不到。
+      </text>
+      <view class='container'><image src="cloud://release-mcwb0.7265-release-mcwb0/wenhuajie1.jpg" style='width:680rpx;height:400rpx;padding:0 0 0 0;'></image></view>
+      <view class='container'><image src="cloud://release-mcwb0.7265-release-mcwb0/wenhuajie2.jpg" style='width:680rpx;height:400rpx;padding:30rpx 0'></image></view>
+  </view>
+
+  <view class='page-body-text-au'>
+      <template is="head_a" data="{{title: '品牌项目二  百团大战'}}" />
+      <text style="color:black">
+      社团招新，浩大场面不容错过
+      近百社团，风采各异总有一款适合你
+      你想要的，这里我们都有
+      </text>
+      <view class='container'><image src="cloud://release-mcwb0.7265-release-mcwb0/baituandazhan1.jpg" style='width:680rpx;height:400rpx;padding:0 0 0 0;'></image></view>
+      <view class='container'><image src="cloud://release-mcwb0.7265-release-mcwb0/baituandazhan2.jpg" style='width:680rpx;height:400rpx;padding:30rpx 0'></image></view>
+  </view>
+
+  <view class="container" style="text-align:center;">
+    <template is="head_a" data="{{title: '现在就加入'}}" />
+    <button name="to_join_us"
+          bindtap="toJoinUs"
+          type="primary" size="default">加入我们</button>
+      <view style="margin-top:20rpx"></view>
+       <template is="head_a" data="{{title: '我们在哪里'}}" />
+      <button name="SUBuilding"
+          bindtap="toSUBuilding"
+          type="primary" size="default">去大学生活动中心</button>
+      <button name="36Building"
+          bindtap="to36Building"
+          type="primary" size="default">去 36 号楼</button>
+    </view>
 
   </view>
   <template is="foot" />

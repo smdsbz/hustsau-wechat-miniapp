@@ -1,24 +1,36 @@
-/* client/page/intro/intro.wxss */
 @import "../common/lib/weui.wxss";
-page {
-    background-color: #F8F8F8;
-    height: 100%;
-    font-size: 32rpx;
-    line-height: 1.6;
-  }
-  
-  .page-body {
-    padding: 20rpx 0;
-  }
-  
-  .btn-area{
-    margin-top: 60rpx;
-    box-sizing: border-box;
-    width: 100%;
-    padding: 0 30rpx;
-  }
-  
-  .tc{
-    text-align: center;
-  }
-  
+
+
+page{
+  background-color: white;
+}
+
+.page-head-title{
+  color:black;
+  font-size: 40rpx;
+}
+
+.page-head-a{
+  padding: 0 100rpx 0;
+  font-size: 30px;
+  text-align: center;
+}
+
+.page-body-text-au{
+   color:#808080;
+  padding: 0 40rpx 200rpx 40rpx;
+font-size: 32rpx;
+}
+
+
+.scroll-view_H{
+  white-space: nowrap;
+}
+.scroll-view-item{
+  height: 300rpx;
+}
+.scroll-view-item_H{
+  display: inline-block;
+  width: 100%;
+  height: 300rpx;
+}

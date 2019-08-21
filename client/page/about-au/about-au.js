@@ -31,6 +31,17 @@ Page({
 
   },
 
+  toSUBuilding: function () {
+    wx.openLocation({
+      type: "wgs84",
+      latitude: this.data.location["SUBuilding"].lat,
+      longitude: this.data.location["SUBuilding"].lon,
+      scale: 17,
+      name: "大学生活动中心",
+      address: "Room 611"
+    })
+
+  },
 
   /**
    * 页面的初始数据

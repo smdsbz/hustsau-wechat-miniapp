@@ -14,10 +14,9 @@ Page({
   data: {
     startDate: "1990-01-01",
     today: new Date().toJSON().slice(0, 10),
-    departments: ['请选择...', '财监委', '财务部', '秘书部', '人力资源部', '社团部', '行政监察部',
-      '公共关系部', '外联部', '媒体部', '宣传部', '思存工作室',
-      '新媒体工作室', '文艺拓展部', '社团外联企划部'
-    ],
+    departments: ['请选择...', '财监委', '财务部', '秘书部', '人力资源部', '社团部', '行政监察部', 
+    '社团外联企划部', '公共关系部', '外联部', '媒体部', '宣传部', '新媒体工作室', 
+    '思存工作室','文艺拓展部'],
     birthday: new Date(new Date().getFullYear() - 18, 0, 1) // smdsbz: assuming they are all 18-years old
       .toJSON().slice(0, 10),
     firstChoice: 0, // smdsbz: pass `departments[firstChoice]` to back-end
@@ -229,10 +228,9 @@ Page({
   toFormObject: function (data) {
     const phonenum = /^\d{11}$/;
     const chineseName = /^[\u4e00-\u9fa5]{2,8}$/;
-    const departments = ['请选择...', '财监委', '财务部', '秘书部', '人力资源部', '社团部', '行政监察部',
-      '公共关系部', '外联部', '媒体部', '宣传部', '思存工作室',
-      '新媒体工作室', '文艺拓展部', '社团外联企划部'
-    ];
+    const departments = ['请选择...', '财监委', '财务部', '秘书部', '人力资源部', '社团部', '行政监察部', 
+    '社团外联企划部', '公共关系部', '外联部', '媒体部', '宣传部', '新媒体工作室', 
+    '思存工作室','文艺拓展部'];
 
     // trim and judge
     const trimArr = [
