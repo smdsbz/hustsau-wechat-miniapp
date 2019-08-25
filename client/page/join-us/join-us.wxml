@@ -70,7 +70,7 @@
         <view class="weui-cell weui-cell_input">
           <view class="weui-cell_bd">
             <!-- smdsbz: ADDITIONAL: regexp check required! -->
-            <input class="weui-input" name="studentId" id="student-id-input" value="U2018" />
+            <input class="weui-input" name="studentId" id="student-id-input" value="U2019" />
           </view>
         </view>
       </view>

@@ -21,6 +21,7 @@ page{
    color:#808080;
   padding: 0 40rpx 250rpx 40rpx;
 font-size: 32rpx;
+text-align: justify;
 }
 
 
@@ -34,4 +35,8 @@ font-size: 32rpx;
   display: inline-block;
   width: 100%;
   height: 300rpx;
+}
+
+.stress{
+  color: orange;
 }

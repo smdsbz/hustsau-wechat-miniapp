@@ -2,11 +2,11 @@
 <import src="../common/head.wxml" />
 <import src="../common/foot.wxml" />
 <view class='container'>
-  <template is="head" data="{{title: '社联介绍'}}" /> 
+  <template is="head" data="{{title: '关于社联'}}" /> 
   <view class='page-body'>
   <view class='page-body-text-au'>
       <text style="color:black;">
-      华中大社联全称华中科技大学学生社团联合会，是学校党委领导、学校团委指导的校级学生组织，自成立至今，社联一直以“增大学景，滋大学情，弘大学德，扬大学名”为不懈追求的目标；以“服务于社团，服务于会员”为恒久不变的宗旨，协助校团委学生社团管理部做好学生社团管理和服务的延伸工作。
+      华中大社联全称华中科技大学学生社团联合会，是学校党委领导、学校团委指导的校级学生组织，自1997年成立至今，社联一直以“<text class="stress"> 增大学景，滋大学情，弘大学德，扬大学名</text>”为不懈追求的目标；以“<text class="stress">服务于社团，服务于会员</text>”为恒久不变的宗旨，协助校团委学生社团管理部做好学生社团管理和服务的延伸工作。
       </text>
   </view>
   <view class='page-body-text-au'>
@@ -16,7 +16,11 @@
       </text>
       <view class='container'><image src="../../image/logo.jpg" style='width:400rpx;height:400rpx;padding: 100rpx 150rpx 0 ;'></image></view>
       <text style="color:black">
-      用象征希望，充满生机的“社联绿”为主色调。似初生的太阳，在成长；似翻腾的海浪，在前进。以“オ”为中心，体现社联重视人才；以“团”为外形，体现社联团结包容。
+      用象征希望，充满生机的“社联绿”为主色调。
+      似初生的太阳，在成长；
+      似翻腾的海浪，在前进。
+      以“オ”为中心，体现社联重视人才；
+      以“团”为外形，体现社联团结包容。
       </text>
   </view>
 
@@ -31,7 +35,11 @@
         &emsp;&emsp;愿我AU，荣耀常在！
       </text>
       <text style="color:black">  
-      永远充满激情、斗志昂扬，因为这是社团的地带。永远骄傲自信、追求卓越，因为这是社联的舞台。这就是社联，就是每一个社联人！
+      永远充满激情、斗志昂扬，
+      因为这是学生社团的地带。
+      永远骄傲自信、追求卓越，
+      因为这是社联的舞台。
+      这就是社联，就是每一个社联人！
       </text>
   </view>
 
@@ -47,7 +55,7 @@
   </view>
 
   <view class='page-body-text-au'>
-      <template is="head_a" data="{{title: '品牌项目一  社团文化节'}}" />
+      <template is="head_a" data="{{title: '社团文化节'}}" />
       <text style="color:black">
       无与伦比的盛大晚会，包罗万象的社团PARTY，缤纷多彩的社团活动……社团文化节通通带给你。
       露天大PARTY——游园会：游戏玩不尽，奖品拿不完
@@ -59,7 +67,7 @@
   </view>
 
   <view class='page-body-text-au'>
-      <template is="head_a" data="{{title: '品牌项目二  百团大战'}}" />
+      <template is="head_a" data="{{title: '百团大战'}}" />
       <text style="color:black">
       社团招新，浩大场面不容错过
       近百社团，风采各异总有一款适合你
