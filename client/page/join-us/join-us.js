@@ -321,13 +321,12 @@ Page({
     db.collection("joinUs").orderBy("formid", "desc").limit(3).get()
       .then(res => {
         console.log('res', res.data);
-        let prefix = (new Date().getFullYear() - 2000) + (new Date().getMonth() < 8 ? "Spri" : "Fall")
-        //生成初始id
+        let prefix = (new Date().getFullYear() - 2000) + (1 < new Date().getMonth() < 8 ? "Spri" : "Fall")
         let maxFormid = "00001";
         if (res.data[0] && res.data[0].formid.slice(0,6) == prefix ) 
         maxFormid = (res.data[0].formid.slice(6,11) * 1 + 100001).toString().slice(1, 6); 
         //NOTE: "abc".slice(0,2) = "ab" not "abc" !
-        console.log("[max formid]", maxFormid);
+        // console.log("[max formid]", maxFormid);
         // formObj.formid = "19Fall" + ((maxFormid.slice(6, 11)) * 1 + 100001).toString().slice(1, 6);
         formObj.formid = prefix + maxFormid;
         console.log("[formObj]", formObj);
