@@ -17,8 +17,9 @@ Page({
     departments: ['请选择...', '社团财务监督委员会', '财务部', '秘书部', '人力资源部', '社团部', '行政监察部', 
     '社团外联企划部', '公共关系部', '外联部', '媒体部', '宣传部', '新媒体工作室', 
     '思存工作室','文艺拓展部'],
-    birthday: new Date(new Date().getFullYear() - 18, 0, 1) // smdsbz: assuming they are all 18-years old
-      .toJSON().slice(0, 10),
+    birthday: new Date(new Date().getFullYear() - 18, 0, 2) // smdsbz: assuming they are all 18-years old
+      .toJSON().slice(0, 10), 
+    //star-du: use Jan 02 to ensure that after conversion we get 01-01 instead of 12-31
     firstChoice: 0, // smdsbz: pass `departments[firstChoice]` to back-end
     secondChoice: 0, //         `-1` for no second choice
     alternativeAllowed: true
@@ -320,11 +321,15 @@ Page({
     db.collection("joinUs").orderBy("formid", "desc").limit(3).get()
       .then(res => {
         console.log('res', res.data);
-        let maxFormid = (new Date().getFullYear() - 2000) + (new Date().getMonth() < 8 ? "Spri" : "Fall") + "00001";
+        let prefix = (new Date().getFullYear() - 2000) + (new Date().getMonth() < 8 ? "Spri" : "Fall")
         //生成初始id
-        if (res.data[0]) maxFormid = res.data[0].formid
+        let maxFormid = "00001";
+        if (res.data[0] && res.data[0].formid.slice(0,6) == prefix ) 
+        maxFormid = (res.data[0].formid.slice(6,11) * 1 + 100001).toString().slice(1, 6); 
+        //NOTE: "abc".slice(0,2) = "ab" not "abc" !
         console.log("[max formid]", maxFormid);
-        formObj.formid = "19Fall" + ((maxFormid.slice(6, 11)) * 1 + 100001).toString().slice(1, 6);
+        // formObj.formid = "19Fall" + ((maxFormid.slice(6, 11)) * 1 + 100001).toString().slice(1, 6);
+        formObj.formid = prefix + maxFormid;
         console.log("[formObj]", formObj);
       })
 
