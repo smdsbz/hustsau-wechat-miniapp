@@ -322,45 +322,48 @@ Page({
       .then(res => {
         console.log('res', res.data);
         let prefix = (new Date().getFullYear() - 2000) + (1 < new Date().getMonth() < 8 ? "Spri" : "Fall")
-        let maxFormid = "00001";
+        let newFormNumber = "00001";
         if (res.data[0] && res.data[0].formid.slice(0,6) == prefix ) 
-        maxFormid = (res.data[0].formid.slice(6,11) * 1 + 100001).toString().slice(1, 6); 
+        newFormNumber = (res.data[0].formid.slice(6,11) * 1 + 100001).toString().slice(1, 6); 
         //NOTE: "abc".slice(0,2) = "ab" not "abc" !
         // console.log("[max formid]", maxFormid);
         // formObj.formid = "19Fall" + ((maxFormid.slice(6, 11)) * 1 + 100001).toString().slice(1, 6);
-        formObj.formid = prefix + maxFormid;
+        formObj.formid = prefix + newFormNumber;
         console.log("[formObj]", formObj);
-      })
 
-
-    db.collection("joinUs").where({
-        mobile: formObj.mobile
-      }).get()
-      .then(res => {
-        // console.log(res);
-        if (res.data.length !== 0) {
-          wx.showModal({
-            title: "请勿重复提交",
-            content: "手机号重复",
-            showCancel: false,
-            confirmText: "再去改改"
-          });
-          wx.hideLoading()
-        } else {
+        db.collection("joinUs").where({
+          mobile: formObj.mobile
+        }).get()
+        .then(res => {
           // console.log(res);
-          db.collection("joinUs")
-            .add({
-              data: formObj
-            })
-            .then(() => {
-              wx.showToast({
-                title: '提交成功',
-                icon: 'success'
-              });
-              wx.hideLoading();
-            })
-        }
+          if (res.data.length !== 0) {
+            wx.showModal({
+              title: "请勿重复提交",
+              content: "手机号重复",
+              showCancel: false,
+              confirmText: "再去改改"
+            });
+            wx.hideLoading()
+          } else {
+            // console.log(res);
+            db.collection("joinUs")
+              .add({
+                data: formObj
+              })
+              .then(() => {
+                wx.showToast({
+                  title: '提交成功',
+                  icon: 'success'
+                });
+                wx.hideLoading();
+              })
+          }
+        })
+        
       })
+
+
+
 
     // wx.hideLoading();
 
