@@ -11,9 +11,9 @@
   </view>
   <view class='page-body-text-au'>
       <template is="head_a" data="{{title: 'Logo'}}" />
-      <text style="">
+      <!-- <text style="">
       Logo用于学生组织或团体的识別和推广，通过形象的徽标可以让广大师生记住组织主体和品牌文化。
-      </text>
+      </text> -->
       <view class='container'><image src="../../image/logo.jpg" style='width:400rpx;height:400rpx;padding: 100rpx 150rpx 0 ;'></image></view>
       <text style="color:black">
       用象征希望，充满生机的“社联绿”为主色调。
@@ -26,14 +26,15 @@
 
   <view class='page-body-text-au'>
       <template is="head_a" data="{{title: 'Slogan'}}" />
-      <text style="">
+      <!-- <text style="">
       Slogan对广大师生的意义在于其所传递的学生组织的运行理念，它所强调的是一个学生组织和其主办活动最为突出的特点。
-      </text>
-
-      <text style="color:black;" decode="{{true}}">
-        &emsp;&emsp;激情澎湃，社团地带；
-        &emsp;&emsp;愿我AU，荣耀常在！
-      </text>
+      </text> -->
+        <view style="text-align:center;">
+        <text style="" class="stress" decode="{{true}}">
+       激情澎湃，社团地带；
+       愿我AU，荣耀常在！
+      </text></view>
+      
       <text style="color:black">  
       永远充满激情、斗志昂扬，
       因为这是学生社团的地带。
@@ -45,19 +46,26 @@
 
   <view class='page-body-text-au'>
       <template is="head_a" data="{{title: 'Mascot'}}" />
-      <text style="">
+      <!-- <text style="">
       Mascot是组织的文化产物，在发展中创造出赋予了象征内容及意义的瑞兽，去满足内心美好愿望的心理需求。吉祥物是对外宣传的有效方式之ー，更是组织文化的载体。
-      </text>
+      </text> -->
       <view class='container'><image src="../../image/weizai.jpg" style='width:400rpx;height:400rpx;padding: 100rpx 150rpx 0 ;'></image></view>
       <text style="color:black">
-      社联微仔作为华中大社联的吉祥物，一方面担当着微信、QQ等公众平台的主页君；另ー方面也是社联周边（地图、玩偶、徽章等）的主要题材。微仔作为社联的“形象代言人”，用乐观向上的态度感染着每一位huster。
+      社联微仔作为华中大社联的吉祥物，一方面担当着微信、QQ等公众平台的主页君；另ー方面也是社联周边（地图、玩偶、徽章等）的主要题材。微仔作为社联的“形象代言人”，用乐观向上的态度感染着每一位HUSTer。
+      </text>
+  </view>
+
+    <view class='page-body-text-au'>
+      <template is="head_a" data="{{title: 'Anthem'}}" />
+      <text style="color:black">
+      《蓝色海洋》是华中科技大学学生社团联合会的会歌。蓝色是梦想的代表色，用蓝色海洋比喻社团是大家可以自由展示的广阔空间。全词以“我”为主体，描绘出每一位HUSTer眼中的社团。在大学迷茫之际，还有社团陪伴在我们左右，让我们懂得如何去面对困难。我们的大学，灵动的世界，亲密的朋友。
       </text>
   </view>
 
   <view class='page-body-text-au'>
       <template is="head_a" data="{{title: '社团文化节'}}" />
       <text style="color:black">
-      无与伦比的盛大晚会，包罗万象的社团PARTY，缤纷多彩的社团活动……社团文化节通通带给你。
+      传承经典、推陈出新的文艺晚会，异彩纷呈的社团展演，缤纷多彩的社团活动...社团文化节通通带给你。      
       露天大PARTY——游园会：游戏玩不尽，奖品拿不完
       高端视觉盛宴——晚会：气氛high不够，精彩享不停。
       最炫社团风——系列活动：没有办不到，只有想不到。
@@ -71,26 +79,59 @@
       <text style="color:black">
       社团招新，浩大场面不容错过
       近百社团，风采各异总有一款适合你
-      你想要的，这里我们都有
       </text>
+      <!-- 你想要的，这里我们都有 -->
       <view class='container'><image src="cloud://release-mcwb0.7265-release-mcwb0/baituandazhan1.jpg" style='width:680rpx;height:400rpx;padding:0 0 0 0;'></image></view>
       <view class='container'><image src="cloud://release-mcwb0.7265-release-mcwb0/baituandazhan2.jpg" style='width:680rpx;height:400rpx;padding:30rpx 0'></image></view>
   </view>
 
+    <view class='page-body-text-au' style="text-align:center;">
+      <template is="head_a" data="{{title: '社团进军营'}}" />
+      <text style="color:black;">
+        军训间隙，精彩不断
+        社团抢先看
+        轮滑单车，魔术街舞
+        千万别眨眼
+      </text>
+      <view class='container'><image src="cloud://release-mcwb0.7265-release-mcwb0/shetuanjinjunying1.png" style='width:680rpx;height:400rpx;padding:0 0 0 0;'></image></view>
+      <view class='container'><image src="cloud://release-mcwb0.7265-release-mcwb0/shetuanjinjunying2.png" style='width:680rpx;height:400rpx;padding:30rpx 0'></image></view>
+  </view>
+
+    <view class='page-body-text-au' style="padding-bottom:0;">
+    <text style="color:black">
+    讲了这么多，想必大家都对华中科技大学学生社团联合会这个略显陌生的组织有了最基本、直接的了解与兴趣，那么:
+    那边的小萌新，对，就是你
+    你想参与全武汉最大的高校露天晚会的筹划吗？
+    你想要成为华科百余社团的管理者吗？
+    你想跟一群极具才华的人们成为小伙伴吗？
+    充满着活力、洋溢着青春的华中大社联将为你提供实现这些的舞台！
+    快来加入华中大社联这个快乐的大家庭吧！  
+    最后，
+    </text>
+            <view style="text-align:center;">
+        <text style="" class="stress" decode="{{true}}">
+       激情澎湃，社团地带；
+       愿我AU，荣耀常在！
+      </text></view>
+  </view>
+
   <view class="container" style="text-align:center;">
-    <template is="head_a" data="{{title: '现在就加入'}}" />
+    <template is="head_a" data="{{title: '现在就加入'}}"/>
     <button name="to_join_us"
           bindtap="toJoinUs"
           type="primary" size="default">加入我们</button>
       <view style="margin-top:20rpx"></view>
-       <template is="head_a" data="{{title: '我们在哪里'}}" />
+    <template is="head_a" data="{{title: '我们在哪里'}}" />
       <button name="SUBuilding"
           bindtap="toSUBuilding"
           type="primary" size="default">去大学生活动中心</button>
       <button name="36Building"
           bindtap="to36Building"
           type="primary" size="default">去 36 号楼</button>
-    </view>
+    <template is="head_a" data="{{title: '更多问题请联系'}}" />
+    <view class='container'><image src="cloud://release-mcwb0.7265-release-mcwb0/zhaoxinzhushou.jpg" style='width:520rpx;height:600rpx;padding:0 0 0 120rpx;'></image></view>
+
+  </view>
 
   </view>
   <template is="foot" />

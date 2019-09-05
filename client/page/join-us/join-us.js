@@ -22,7 +22,9 @@ Page({
     //star-du: use Jan 02 to ensure that after conversion we get 01-01 instead of 12-31
     firstChoice: 0, // smdsbz: pass `departments[firstChoice]` to back-end
     secondChoice: 0, //         `-1` for no second choice
-    alternativeAllowed: true
+    alternativeAllowed: true,
+    apartmentArray: ["请选择", "韵苑", "紫菘", "沁苑"],
+    apartmentIndex: 0
   },
 
   /**
@@ -51,6 +53,13 @@ Page({
   bindRegionChange: function (e) {
     this.setData({
       birthPlace: e.detail.value
+    });
+  },
+
+  bindApartmentChange: function (e) {
+    // console.log('apartment picker发送选择改变，携带值为', e.detail.value);
+    this.setData({
+      apartmentIndex: e.detail.value
     });
   },
 
@@ -237,7 +246,8 @@ Page({
     const trimArr = [
       ["name", "姓名"],
       ["gender", "性别"],
-      ["mobile", "手机号码"]
+      ["mobile", "手机号码"],
+      ["apartment", "宿舍地址"]
     ];
     for (let i = 0; i < trimArr.length; i++) {
       data[trimArr[i][0]] = data[trimArr[i][0]].trim();
@@ -249,6 +259,10 @@ Page({
 
     if (data.firstDepartmentChoice == 0) return {
       err: "请填写您要加入的部门"
+    }
+
+    if (data.apartment == "请选择") return {
+      err: "请填写宿舍地址"
     }
 
     if (!(chineseName.test(data.name))) return {
@@ -312,16 +326,11 @@ Page({
       mask: true, // prevent unwanted touch event
     });
 
-    /* 
-    **TODO** 云开发实现
-    查询表单中的手机号  -> 若数据库中无结果： 自动添加表单号（拟定格式 `19Fall00001`），
-                            加入云开发数据库joinUs
-                      -> 若已有相应表单，提示“请勿重复提交” 并返回 
-    */
+  
     db.collection("joinUs").orderBy("formid", "desc").limit(3).get()
       .then(res => {
         console.log('res', res.data);
-        let prefix = (new Date().getFullYear() - 2000) + (1 < new Date().getMonth() < 8 ? "Spri" : "Fall")
+        let prefix = (new Date().getFullYear() - 2000) + (1 < new Date().getMonth() && new Date().getMonth() < 8 ? "Spri" : "Fall")
         let newFormNumber = "00001";
         if (res.data[0] && res.data[0].formid.slice(0,6) == prefix ) 
         newFormNumber = (res.data[0].formid.slice(6,11) * 1 + 100001).toString().slice(1, 6); 

@@ -97,8 +97,11 @@
       <view class="weui-cells weui-cells_after-title">
         <view class="weui-cell weui-cell_input">
           <view class="weui-cell_bd">
-            <input class="weui-input" name="apartment" id="apartment-input"
-              placeholder="紫菘xx栋 xxx室" />
+            <!-- <input class="weui-input" name="apartment" id="apartment-input"
+              placeholder="紫菘xx栋 xxx室" /> -->
+            <picker bindchange="bindApartmentChange" value = "{{apartmentArray[apartmentIndex]}}" range="{{apartmentArray}}" name="apartment" id="apartment-picker">
+              <view class="weui-input">{{apartmentArray[apartmentIndex]}}</view>
+            </picker>
           </view>
         </view>
       </view>
@@ -232,10 +235,16 @@
 
 
     </form>
+
+
   </view>
 
+      <!-- 其他信息 -->
+    <template is="head" data="{{title: '更多问题请联系'}}" />
+<view class='container'><image src="cloud://release-mcwb0.7265-release-mcwb0/zhaoxinzhushou.jpg" style='width:520rpx;height:600rpx;padding:0 0 0 120rpx;'></image></view>
 
   <template is="foot" />
+
 
 </view>
 
