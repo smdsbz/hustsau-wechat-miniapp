@@ -18,8 +18,8 @@ page{
 }
 
 .page-body-text-au{
-   color:#808080;
-  padding: 0 40rpx 250rpx 40rpx;
+   color: black;
+  padding: 0 40rpx 120rpx 40rpx;
 font-size: 32rpx;
 text-align: justify;
 }

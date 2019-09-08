@@ -360,9 +360,11 @@ Page({
                 data: formObj
               })
               .then(() => {
-                wx.showToast({
-                  title: '提交成功',
-                  icon: 'success'
+                wx.showModal({
+                  title: "提交成功",
+                  content: "你已成功提交报名表！",
+                  showCancel: false,
+                  confirmText: "确认"
                 });
                 wx.hideLoading();
               })
