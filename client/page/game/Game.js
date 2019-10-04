@@ -160,7 +160,22 @@ class Game {
     sendRecord() {
         const app = getApp();
         const that = this;
-      /*  app.getUserInfo(function (userInfo) {
+        const db = wx.cloud.database();
+        const record = {
+            name: "hahaha",
+             score: that.frameCount
+         };
+        db.collection("test").add({
+            data:record
+        }).then(() => {wx.showModal({
+            title: "提交成功",
+                  content: "游戏成绩已提交至服务器！",
+                  showCancel: false,
+                  confirmText: "确认"
+        });}
+        )
+        console.log("record: " + record);
+        /*  app.getUserInfo(function (userInfo) {
             // 要发送到服务端的数据，正常情况下应该把openId发过去的，懒得搞了
             const record = {
                name: userInfo.nickName,

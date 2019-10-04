@@ -13,7 +13,7 @@ App({
     } else {
       wx.cloud.init({
         traceUser: true,
-        env: "release-mcwb0"
+        env: "test-x2eg6"
       });
     }
   },
