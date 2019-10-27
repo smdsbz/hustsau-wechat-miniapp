@@ -12,6 +12,11 @@ Page({
   },
 
   onReady: function (e) {
+
+    wx.authorize({
+      scope: 'scope.userInfo'
+    });
+    
     let gameConfig = { statusCallback: this.changeStatus };
     let that = this;
 
@@ -43,5 +48,14 @@ Page({
       this.game.down();
     else if (this.data.status == 2)
       this.game.start();
+  },
+
+  navToleaderboards: function () {
+    wx.navigateTo({
+      url: 'leaderboards/leaderboards',
+      success: function(res) {},
+      fail: function(res) {},
+      complete: function(res) {},
+    })
   }
 })

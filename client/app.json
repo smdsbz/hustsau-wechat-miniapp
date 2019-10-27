@@ -3,7 +3,8 @@
     "page/intro/intro",
     "page/join-us/join-us",
     "page/about-au/about-au",
-    "page/game/index"
+    "page/game/index",
+    "page/game/leaderboards/leaderboards"
   ],
   "window": {
     "navigationBarTextStyle": "black",

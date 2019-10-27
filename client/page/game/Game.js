@@ -161,19 +161,38 @@ class Game {
         const app = getApp();
         const that = this;
         const db = wx.cloud.database();
+        let nickName = "default";
+
+        wx.getSetting({
+            success(res) {
+                if (res.authSetting["scope.userInfo"]) {
+                    // 已授权,可以直接调用 getUserInfo
+                    wx.getUserInfo({
+                        success(r) {
+                            console.log("[getUserInfo] success."+r.nickName);
+                            nickName = r.nickName;
+                        }
+                    });
+                } else {
+                    console.log("No auth to 'scope.userInfo'.");
+                }
+            }
+        });
+
         const record = {
-            name: "hahaha",
-             score: that.frameCount
-         };
+            name: nickName,
+            score: that.frameCount
+        };
         db.collection("test").add({
-            data:record
-        }).then(() => {wx.showModal({
-            title: "提交成功",
-                  content: "游戏成绩已提交至服务器！",
-                  showCancel: false,
-                  confirmText: "确认"
-        });}
-        )
+            data: record
+        }).then(() => {
+            wx.showModal({
+                title: "提交成功",
+                content: "游戏成绩已提交至服务器！",
+                showCancel: false,
+                confirmText: "确认"
+            });
+        })
         console.log("record: " + record);
         /*  app.getUserInfo(function (userInfo) {
             // 要发送到服务端的数据，正常情况下应该把openId发过去的，懒得搞了

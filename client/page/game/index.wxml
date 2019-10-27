@@ -7,6 +7,8 @@
     {{status===1?'按住起飞':''}}
     {{status===2?'重新挑战':''}}
   </button>
+
+  <button type="primary" bindtap="navToleaderboards">排行榜</button>
   <!-- <view class='container'>
       <view class='page-body-text-au'>
         <text>
