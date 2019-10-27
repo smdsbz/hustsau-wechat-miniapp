@@ -16,15 +16,26 @@ canvas {
 }
 
 /*写死button的上边距，反正就一个button*/
-button {
+#flyButton {
   margin-top: 50px;
-  padding: 25px;
-  height: 100px;
-  border-radius: 100px;
-  width: 70%;
+  padding: 15px;
+  height: 70px;
+  border-radius: 10px;
+  width: 60%;
 }
-.page-body-text-au{
+
+.smaller-button{
+  margin-top: 20px;
+  margin-left: 20%;
+  margin-right: 20%;
+  padding: 15px;
+  height: 40px;
+  border-radius: 10px;
+  width: 60%;
+}
+
+.text-game{
    color:#808080;
-  padding: 0 40rpx 250rpx 40rpx;
 font-size: 32rpx;
+text-align: center;
 }

@@ -2,19 +2,22 @@
 <view>
   <canvas canvas-id="1"/>
   <!-- 坑爹的三元运算符不能嵌套 -->
+    
   <button id="flyButton" type="primary" bindtouchstart="handleTouchStart" bindtouchend="handleTouchEnd"> 
     {{status===0?'开始游戏':''}}
     {{status===1?'按住起飞':''}}
     {{status===2?'重新挑战':''}}
   </button>
 
-  <button type="primary" bindtap="navToleaderboards">排行榜</button>
-  <!-- <view class='container'>
-      <view class='page-body-text-au'>
+  <button wx:if="{{!hasUserInfo}}" class="smaller-button" type = "primary" size="mini" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">授权用户昵称</button>
+      <view wx:if="{{!hasUserInfo}}" class='text-game' style="height:auto;">
         <text>
-         发送2500+分截图至微仔QQ（2434075395）
-         赢取社团文化节游园会VIP门票和精美礼品!
+         请先授权用户昵称再游戏，
+         否则无法在排行榜上显示姓名哦！
         </text>
       </view>
-  </view> -->
+<button class="smaller-button"  type="primary" size="mini" bindtap="navToleaderboards">排行榜</button>
+
+
+
 </view>

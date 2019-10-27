@@ -5,16 +5,16 @@ Page({
    * 页面的初始数据
    */
   data: {
-    player: [{
-      name: "hao",
-      score: 114514
-    }, {
-      name: "2",
-      score: 114514
-    }, {
-      name: "4",
-      score: 114514
-    }]
+    // player: [{
+    //   name: "hao",
+    //   score: 114514
+    // }, {
+    //   name: "2",
+    //   score: 114514
+    // }, {
+    //   name: "4",
+    //   score: 114514
+    // }]
   },
 
   get: function () {
@@ -22,7 +22,7 @@ Page({
     const db = wx.cloud.database();
     const that = this
 
-    db.collection("test").orderBy("score", "desc").limit(50).get()
+    db.collection("gameResult").orderBy("score", "desc").limit(50).get()
       .then(res => {
         that.setData({
           player: res.data
