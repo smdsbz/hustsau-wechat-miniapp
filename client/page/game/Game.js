@@ -5,6 +5,7 @@ import config from '../../config.js';
  * 对一局游戏的抽象
  */
 class Game {
+
     constructor(config) {
         this.ctx = wx.createContext();  // 微信的canvas context
         this.canvasWidth = config.canvasWidth;
@@ -154,6 +155,13 @@ class Game {
         });
     }
 
+    // setUserInfo(userInfo)
+    // {
+    //     this.userInfo = userInfo;
+    //     console.log("userInfo is set in Game.js");
+    //     console.log(this.userInfo);
+    // }
+
     /**
      * 向服务端汇报数据
      */
@@ -161,36 +169,64 @@ class Game {
         const app = getApp();
         const that = this;
         const db = wx.cloud.database();
-        const record = {
-            name: "hahaha",
-             score: that.frameCount
-         };
-        db.collection("test").add({
-            data:record
-        }).then(() => {wx.showModal({
-            title: "提交成功",
-                  content: "游戏成绩已提交至服务器！",
-                  showCancel: false,
-                  confirmText: "确认"
-        });}
-        )
-        console.log("record: " + record);
-        /*  app.getUserInfo(function (userInfo) {
-            // 要发送到服务端的数据，正常情况下应该把openId发过去的，懒得搞了
-            const record = {
-               name: userInfo.nickName,
-                pic: userInfo.avatarUrl,
-                score: that.frameCount
-            };
-            console.debug('send record to server: %o', record);
-            // 这个请求即使失败也暂时不处理
-            wx.request({
-                url: config.host + '/flappy/send',  // 注意只能请求公众平台中配置好的域名
-                data: record,
-                method: 'POST'
-            });
+        let nickName = "匿名";
+        let avatarUrl = "";
+
+
+        wx.getSetting({
+            success(res) {
+                if (res.authSetting["scope.userInfo"]) {
+                    // 已授权,可以直接调用 getUserInfo
+                    wx.getUserInfo({
+                        success(r) {
+                            console.log("[getUserInfo] success.");
+                            // console.log(r.userInfo);
+                            
+                            nickName = r.userInfo.nickName;
+                            avatarUrl = r.userInfo.avatarUrl;
+                            const record = {
+                                name: nickName,
+                                score: that.frameCount,
+                                avatar: avatarUrl
+                            };
+                            console.log(record);
+                            
+                            db.collection("gameResult").add({
+                                data: record
+                            }).then(() => {
+                                wx.showModal({
+                                    title: "提交成功",
+                                    content: "游戏成绩已提交至服务器！",
+                                    showCancel: false,
+                                    confirmText: "确认"
+                                });
+                            })
+                        
+                        }
+                    });
+                } else {
+                    const record = {
+                        name: nickName,
+                        score: that.frameCount,
+                        avatar: avatarUrl
+                    };
+                    console.log("No auth to 'scope.userInfo'.");
+                    db.collection("gameResult").add({
+                        data: record
+                    }).then(() => {
+                        wx.showModal({
+                            title: "提交成功",
+                            content: "游戏成绩已提交至服务器！",
+                            showCancel: false,
+                            confirmText: "确认"
+                        });
+                    })
+                }
+            }
         });
-        */
+
+        
+
     }
 
     /**
