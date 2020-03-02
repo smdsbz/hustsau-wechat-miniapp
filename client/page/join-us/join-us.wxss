@@ -1,2 +1,6 @@
-/* page/join-us/join-us.wxss */
-@import "../common/lib/weui.wxss";
+/* client/page/join-us/join-us.wxss */
+@import "../../colorui/animation.wxss";
+
+.cu-form-group .title{
+    min-width: 160rpx;
+}

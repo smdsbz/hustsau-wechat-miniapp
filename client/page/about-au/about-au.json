@@ -1,3 +1,4 @@
 {
-  "navigationBarTitleText": "部门介绍"
+  "navigationBarTitleText": "部门介绍",
+  "component": true
 }

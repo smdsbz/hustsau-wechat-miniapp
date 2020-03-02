@@ -1,5 +1,5 @@
 {
-	"description": "项目配置文件。",
+	"description": "项目配置文件clients",
 	"setting": {
 		"urlCheck": true,
 		"es6": true,
@@ -10,7 +10,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "1.9.94",
 	"appid": "wx605fd2d564055740",
-	"projectname": "%E7%A4%BE%E8%81%94%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%AB%AF",
+	"projectname": "社联微信小程序端",
 	"condition": {
 		"search": {
 			"current": -1,

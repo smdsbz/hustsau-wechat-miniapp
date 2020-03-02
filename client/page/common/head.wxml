@@ -3,12 +3,5 @@
     <view class="page-head-title">{{title}}</view>
     <view class="page-head-line"></view>
     <view wx:if="{{desc}}" class="page-head-desc">{{desc}}</view>
-    <template name="head_a">
-  <view class="page-head-a">
-    <view class="page-head-title">{{title}}</view>
-    <view class="page-head-line"></view>
-    <view wx:if="{{desc}}" class="page-head-desc">{{desc}}</view>
-  </view>
-</template>
   </view>
 </template>

@@ -1,0 +1,7 @@
+{
+    "usingComponents": {
+        "aboutau": "../intro/intro",
+        "joinus": "../join-us/join-us",
+        "intro": "../about-au/about-au"
+    }
+}
