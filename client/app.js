@@ -17,6 +17,7 @@ App({
             });
         }
 
+        // color UI bar height
         wx.getSystemInfo({
             success: e => {
                 this.globalData.StatusBar = e.statusBarHeight;
@@ -30,23 +31,20 @@ App({
             }
         });
 
-        var getcf = async() => {
-            var cloudFileKey = Object.keys(this.globalData.cloudFileList),
+        (async() => {
+            let cloudFileKey = Object.keys(this.globalData.cloudFileList),
                 cloudFileString = [];
-            for (var i of cloudFileKey)
+            for (let i of cloudFileKey)
                 cloudFileString.push(this.globalData.cloudFileList[i].fileID);
             await wx.cloud.getTempFileURL({
                 fileList: cloudFileString
             }).then(res => {
                 // get temp file URL
-                for (var i in res.fileList)
+                for (let i in res.fileList)
                     this.globalData.cloudFileList[cloudFileKey[i]].url =
-                    res.fileList[i].tempFileURL;
-            }).catch(error => {
-                // handle error
+                        res.fileList[i].tempFileURL;
             });
-        };
-        getcf();
+        })();
 
     },
     onShow: function() {
@@ -62,6 +60,24 @@ App({
             "img/cardBg.jpg": {
                 fileID: "cloud://release-mcwb0.7265-release-mcwb0-1256427422/img/cardBg.png",
                 url: "https://7265-release-mcwb0-1256427422.tcb.qcloud.la/img/cardBg.png"
+            }
+        },
+        location: {
+            building36: {
+                address: "SicunStudio",
+                latitude: 30.516015,
+                longitude: 114.415886,
+                name: "36 号楼",
+                scale: 17,
+                type: "wgs84"
+            },
+            buildingSU: {
+                address: "Room 611",
+                latitude: 30.514293,
+                longitude: 114.414249,
+                name: "大学生活动中心",
+                scale: 17,
+                type: "wgs84"
             }
         }
     },

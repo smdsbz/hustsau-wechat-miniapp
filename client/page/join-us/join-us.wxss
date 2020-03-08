@@ -4,3 +4,7 @@
 .cu-form-group .title{
     min-width: 160rpx;
 }
+
+.scrollPage .page-head:first-of-type {
+    padding-top: 0;
+}

@@ -12,7 +12,7 @@
     </cu-custom>
 
     <view class="flex justify-center padding-lg">
-        <image src="../../image/department_structure.png" style="width:730rpx;height:600rpx;" mode="aspectFit" lazy-load="true"></image>
+        <image src="cloud://release-mcwb0.7265-release-mcwb0-1256427422/img/department_structure.png" style="width:730rpx;height:600rpx;" mode="aspectFit" lazy-load="true"></image>
     </view>
 
     <view class="page-body-text-au">
@@ -193,10 +193,10 @@
         <template is="head" data="{{title: '我们在哪里'}}" />
         <view class="felx justify-center padding-sm">
             <view class="margin-tb-sm text-center">
-                <button class="cu-btn lg round bg-green shadow" bindtap="toSUBuilding">去大学生活动中心</button>
+                <button class="cu-btn lg round bg-green shadow" bindtap="toLoc" data-loc="buildingSU">去大学生活动中心</button>
             </view>
             <view class="margin-tb-sm text-center">
-                <button class="cu-btn lg round bg-green shadow" bindtap="to36Building">去 36 号楼</button>
+                <button class="cu-btn lg round bg-green shadow" bindtap="toLoc" data-loc="building36">去 36 号楼</button>
             </view>
         </view>
         <view class="flex justify-center padding-lg">

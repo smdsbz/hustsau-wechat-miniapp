@@ -16,9 +16,9 @@ Component({
         ],
         birthday: new Date(new Date().getFullYear() - 18, 0, 2).toJSON().slice(0, 10),
         // smdsbz: assuming they are all 18-years old
-        //star-du: use Jan 02 to ensure that after conversion we get 01-01 instead of 12-31
-        firstChoice: null, // smdsbz: pass `departments[firstChoice]` to back-end
-        secondChoice: null, // `-1` for no second choice
+        // star-du: use Jan 02 to ensure that after conversion we get 01-01 instead of 12-31
+        firstChoice: null,
+        secondChoice: null, // null for no second choice
         alternativeAllowed: true,
         apartmentArray: ["韵苑", "紫菘", "沁苑"],
         apartmentIndex: null,
@@ -34,25 +34,25 @@ Component({
     },
     methods: {
         bindAlterChange: function(e) {
-            console.log(e.detail.value);
+            // console.log(e.detail.value);
             this.setData({
                 alternativeAllowed: e.detail.value
             });
         },
         bindApartmentChange: function(e) {
-            console.log(e.detail.value);
+            // console.log(e.detail.value);
             this.setData({
                 apartmentIndex: e.detail.value
             });
         },
         bindBirthdayChange: function(e) {
-            console.log(e.detail.value);
+            // console.log(e.detail.value);
             this.setData({
                 birthday: e.detail.value
             });
         },
         bindBirthplaceChange: function(e) {
-            console.log(e.detail.value);
+            // console.log(e.detail.value);
             this.setData({
                 birthplace: e.detail.value
             });
@@ -115,7 +115,7 @@ Component({
          * 
          * @param  {Object}data   The object form, typically from e.detail.value.
          *
-         * @return {Object}formObj    A form that is checked. 
+         * @return {Object}formObj  A form that is checked. 
          *                          If there is any error, a 'err' property
          *                          will be found in the return Object.
          */
@@ -153,12 +153,11 @@ Component({
                 err: "请填写宿舍地址"
             }
 
-            /*if (!(chineseName.test(data.name))) return {
-                err: "请填写正确的中文姓名"
-            };
+            /*
             if (!(phonenum.test(data.mobile))) return {
                 err: "请填写您的手机号码！我们将以短信的形式通知您面试地点！\n如已填写，检查下是否填错了？"
-            };*/
+            };
+            */
 
             // - if allow alternative department
             if (data.allowAlterDepartment && data.secondDepartmentChoice === null)
@@ -166,8 +165,8 @@ Component({
                     err: "请选择您的备选部门！\n或者取消勾选「是否服从调剂」！"
                 }
 
-            if (!data["allow-alternative-department"])
-                data.secondDepartmentChoice = null;
+            let dept2 = data.allowAlterDepartment && data.secondDepartmentChoice ? 
+                deptm[data.secondDepartmentChoice] : "不服从调剂";
 
             return {
                 apartment: this.data.apartmentArray[this.data.apartmentIndex],
@@ -181,7 +180,7 @@ Component({
                 studentId: data.studentId,
 
                 firstDepartmentChoice: deptm[data.firstDepartmentChoice],
-                secondDepartmentChoice: data.allowAlterDepartment ? deptm[data.secondDepartmentChoice] : "不服从调剂",
+                secondDepartmentChoice: dept2,
 
                 hobbies: data.hobbies,
                 formerExperience: data.formerExperience,
@@ -208,18 +207,15 @@ Component({
                         wx.hideLoading();
                     } else {
                         // console.log(res);
-                        dbcol.add({
-                                data: formObj
-                            })
-                            .then(() => {
-                                wx.showModal({
-                                    title: "提交成功",
-                                    content: "你已成功提交报名表！",
-                                    showCancel: false,
-                                    confirmText: "确认"
-                                });
-                                wx.hideLoading();
-                            })
+                        dbcol.add({data: formObj}).then(() => {
+                            wx.showModal({
+                                title: "提交成功",
+                                content: "你已成功提交报名表！",
+                                showCancel: false,
+                                confirmText: "确认"
+                            });
+                            wx.hideLoading();
+                        })
                     }
                 })
         }

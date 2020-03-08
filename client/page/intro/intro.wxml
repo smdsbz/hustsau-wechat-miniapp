@@ -14,8 +14,7 @@
 
     <view class='page-body-text-au'>
         <text decode="true">
-&emsp;&emsp;华中大社联全称华中科技大学学生社团联合会，是学校党委领导、学校团委指导的校级学生组织，自1997年成立至今，社联一直以“<text class="stress">增大学景，滋大学情，弘大学德，扬大学名</text>”为不懈追求的目标；以“
-        <text class="stress">服务于社团，服务于会员</text>”为恒久不变的宗旨，协助校团委学生社团管理部做好学生社团管理和服务的延伸工作。
+&emsp;&emsp;华中大社联全称华中科技大学学生社团联合会，是学校党委领导、学校团委指导的校级学生组织，自1997年成立至今，社联一直以“<text class="stress">增大学景，滋大学情，弘大学德，扬大学名</text>”为不懈追求的目标；以“<text class="stress">服务于社团，服务于会员</text>”为恒久不变的宗旨，协助校团委学生社团管理部做好学生社团管理和服务的延伸工作。
         </text>
     </view>
 
@@ -142,10 +141,10 @@
         <template is="head" data="{{title: '我们在哪里'}}" />
         <view class="justify-center padding-sm">
             <view class="margin-tb-sm text-center">
-                <button class="cu-btn lg round bg-green shadow" bindtap="toSUBuilding">去大学生活动中心</button>
+                <button class="cu-btn lg round bg-green shadow" bindtap="toLoc" data-loc="buildingSU">去大学生活动中心</button>
             </view>
             <view class="margin-tb-sm text-center">
-                <button class="cu-btn lg round bg-green shadow" bindtap="to36Building">去 36 号楼</button>
+                <button class="cu-btn lg round bg-green shadow" bindtap="toLoc" data-loc="building36">去 36 号楼</button>
             </view>
         </view>
         <template is="head" data="{{title: '更多问题请联系'}}" />

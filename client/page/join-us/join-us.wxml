@@ -10,7 +10,7 @@
             </view>
         </view>
     </cu-custom>
-    <template is="head_a" data="{{title: '个人信息'}}" />
+    <template is="head" data="{{title: '个人信息'}}"/>
     <form bindsubmit="submitJoinUsForm">
 
         <!-- 姓名 -->
@@ -83,7 +83,7 @@
         </view>
 
         <!-- 意愿部门 -->
-        <template is="head_a" data="{{title: '意愿部门'}}" />
+        <template is="head" data="{{title: '意愿部门'}}" />
         <!-- 第一志愿 -->
         <view class="cu-form-group margin-top">
             <view class="title">第一志愿</view>
@@ -108,7 +108,7 @@
         </view>
 
         <!-- 其他信息 -->
-        <template is="head_a" data="{{title: '让我们了解你'}}" />
+        <template is="head" data="{{title: '让我们了解你'}}" />
 
         <view class="cu-bar bg-white solid-bottom text-black margin-top">
             <view class="action">
@@ -150,7 +150,7 @@
         </view>
     </form>
 
-    <template is="head_a" data="{{title: '更多问题请联系'}}" />
+    <template is="head" data="{{title: '更多问题请联系'}}" />
     <view class="flex justify-center padding-lg">
         <image src="cloud://release-mcwb0.7265-release-mcwb0/zhaoxinzhushou.jpg" mode="aspectFit" lazy-load="true" style="width:600rpx;height:800rpx;" />
     </view>
