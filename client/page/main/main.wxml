@@ -1,16 +1,16 @@
 <!--client/page/main/main.wxml-->
-<aboutau wx:if="{{curr == 0}}" bind:tapnav="navSelect"></aboutau>
+<intro-au wx:if="{{curr == 0}}" bind:tapnav="navSelect"></intro-au>
 <joinus wx:elif="{{curr == 1}}"></joinus>
-<intro wx:elif="{{curr == 2}}" bind:tapnav="navSelect"></intro>
+<dept wx:elif="{{curr == 2}}" bind:tapnav="navSelect"></dept>
 
 <view class="cu-bar tabbar bg-white shadow foot">
-    <view class="action text-{{curr == 0 ? 'green' : 'gray'}}" bindtap="navSelect" data-curr="0">
-        <view class="cuIcon-homefill"></view> 关于社联
-    </view>
-    <view class="action text-{{curr == 1 ? 'green' : 'gray'}} add-action" bindtap="navSelect" data-curr="1">
-        <button class="cu-btn cuIcon-add bg-green shadow"></button> 加入我们
-    </view>
-    <view class="action text-{{curr == 2 ? 'green' : 'gray'}}" bindtap="navSelect" data-curr="2">
-        <view class="cuIcon-comment"></view> 部门介绍
-    </view>
+	<view class="action text-{{curr == 0 ? 'green' : 'black'}}" bindtap="navSelect" data-curr="0">
+		<view class="cuIcon-homefill"></view> 关于社指
+	</view>
+	<view class="action text-{{curr == 1 ? 'green' : 'black'}} add-action" bindtap="navSelect" data-curr="1">
+		<button class="cu-btn cuIcon-add bg-green shadow"></button> 加入我们
+	</view>
+	<view class="action text-{{curr == 2 ? 'green' : 'black'}}" bindtap="navSelect" data-curr="2">
+		<view class="cuIcon-comment"></view> 部门介绍
+	</view>
 </view>

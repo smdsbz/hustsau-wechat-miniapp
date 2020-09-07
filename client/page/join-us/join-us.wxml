@@ -1,161 +1,158 @@
 <!--page/join-us/join-us.wxml-->
 <import src="../common/head.wxml" />
 <import src="../common/foot.wxml" />
-<scroll-view scroll-y class="scrollPage" style="background-color: #f6f6f6">
-    <cu-custom class="bg-green" bgImage="{{fileList['img/cardBg.jpg'].url}}">
-        <view slot="content">
-            <view class="action sub-title">
-                <text class="text-xxl text-bold text-white">加入我们</text>
-                <text class="text-ABC text-white" decode="true">join us</text>
-            </view>
-        </view>
-    </cu-custom>
-    <template is="head" data="{{title: '个人信息'}}"/>
-    <form bindsubmit="submitJoinUsForm">
+<view style="background-color: #f6f6f6">
+	<cu-custom class="bg-green">
+		<view slot="content">
+			<view class="action sub-title">
+				<text class="text-xxl text-bold text-white">加入我们</text>
+				<text class="text-ABC text-white" decode="true">join us</text>
+			</view>
+		</view>
+	</cu-custom>
 
-        <!-- 姓名 -->
-        <view class="cu-form-group margin-top">
-            <view class="title">姓名</view>
-            <input id="name-input" name="name" placeholder="请填写姓名"></input>
-        </view>
+	<form bindsubmit="submitJoinUsForm">
+		<view style="margin-top:-40rpx"><template is="head" data="{{title: '个人信息'}}" /></view>
 
-        <!-- 性别 -->
-        <view class="cu-form-group">
-            <view class="title">性别</view>
-            <switch id="gender-switch" name="gender" class="switch-sex s1" checked></switch>
-        </view>
+		<!-- 姓名 -->
+		<view class="cu-form-group margin-top">
+			<view class="title">姓名</view>
+			<input id="name-input" name="name" placeholder="如：微仔"></input>
+		</view>
 
-        <!-- 出生日期 -->
-        <view class="cu-form-group">
-            <view class="title">出生日期</view>
-            <picker mode="date" id="birthday-input" name="birthday" value="{{birthday}}" start="{{startDate}}" end="{{today}}" bindchange="bindBirthdayChange">
-                <view class="picker">
-                    {{birthday}}
-                </view>
-            </picker>
-        </view>
+		<!-- 性别 -->
+		<view class="cu-form-group">
+			<view class="title">性别</view>
+			<switch id="gender-switch" name="gender" class="switch-sex s1" checked></switch>
+		</view>
 
-        <!-- 学号 -->
-        <view class="cu-form-group">
-            <view class="title">学号</view>
-            <input id="student-id-input" name="studentId" value="U201900000"></input>
-        </view>
+		<!-- 出生日期 -->
+		<view class="cu-form-group">
+			<view class="title">出生日期</view>
+			<picker mode="date" id="birthday-input" name="birthday" value="{{birthday}}" start="{{startDate}}" end="{{today}}" bindchange="bindBirthdayChange">
+				<view class="picker">
+					{{birthday}}
+				</view>
+			</picker>
+		</view>
 
-        <!-- 专业班级 -->
-        <!-- smdsbz: TODO: Make it a selection field -->
-        <view class="cu-form-group">
-            <view class="title">专业班级</view>
-            <input id="facultyAndClass-input" name="facultyAndClass" placeholder="请填写专业和班级"></input>
-        </view>
+		<!-- 学号 -->
+		<view class="cu-form-group">
+			<view class="title">学号</view>
+			<input id="student-id-input" name="studentId" placeholder="如：U201900000"></input>
+		</view>
 
-        <!-- 联系电话 -->
-        <view class="cu-form-group">
-            <view class="title">联系电话</view>
-            <input id="mobile-input" name="mobile" maxlength="11" type="number" placeholder="请填写11位手机号"></input>
-        </view>
+		<!-- 专业班级 -->
+		<!-- smdsbz: TODO: Make it a selection field -->
+		<view class="cu-form-group">
+			<view class="title">专业班级</view>
+			<input id="faculty-input" name="faculty" placeholder="请填写专业和班级"></input>
+		</view>
 
-        <!-- 电子邮箱 -->
-        <!-- smdsbz: TODO: regexp check required! -->
-        <view class="cu-form-group">
-            <view class="title">电子邮箱</view>
-            <input id="email-input" name="email" placeholder="请填写邮箱"></input>
-        </view>
+		<!-- 联系电话 -->
+		<view class="cu-form-group">
+			<view class="title">联系电话</view>
+			<input id="mobile-input" name="mobile" maxlength="11" type="number" placeholder="请填写11位手机号"></input>
+		</view>
 
-        <!-- 宿舍地址 -->
-        <!-- smdsbz: TODO: Make it a selection field -->
-        <view class="cu-form-group">
-            <view class="title">宿舍地址</view>
-            <picker name="apartment" id="apartment-picker" value="{{apartmentIndex}}" range="{{apartmentArray}}" bindchange="bindApartmentChange">
-                <view class="picker">
-                    {{apartmentIndex ? apartmentArray[apartmentIndex] : '请选择'}}
-                </view>
-            </picker>
-        </view>
+		<!-- 电子邮箱 -->
+		<!-- smdsbz: TODO: regexp check required! -->
+		<view class="cu-form-group">
+			<view class="title">电子邮箱</view>
+			<input id="email-input" name="email" placeholder="请填写邮箱"></input>
+		</view>
 
-        <!-- 籍贯 -->
-        <view class="cu-form-group">
-            <view class="title">籍贯</view>
-            <picker mode="region" name="birthplace" id="birthPlace-picker" value="{{birthplace}}"  bindchange="bindBirthplaceChange">
-                <view class="picker">
-                    {{birthplace[0]}}，{{birthplace[1]}}，{{birthplace[2]}}
-                </view>
-            </picker>
-        </view>
+		<!-- 宿舍地址 -->
+		<view class="cu-form-group">
+			<view class="title">宿舍地址</view>
+			<picker id="apartmentArea-picker" name="apartmentArea" value="{{apartmentIndex}}" range="{{apartmentArray}}" bindchange="bindApartmentChange">
+				<view class="picker">{{apartmentIndex ? apartmentArray[apartmentIndex] : '请选择'}}</view>
+			</picker>
+			<input id="apartmentBuilding-input" name="apartmentBuilding" maxlength="2" type="number" placeholder="如：1" style="text-align:right"></input> 栋
+		</view>
 
-        <!-- 意愿部门 -->
-        <template is="head" data="{{title: '意愿部门'}}" />
-        <!-- 第一志愿 -->
-        <view class="cu-form-group margin-top">
-            <view class="title">第一志愿</view>
-            <picker name="firstDepartmentChoice" id="firstDepartmentChoice-picker" value="{{firstChoice}}" range="{{departments}}" bindchange="bindDepartment1Change">
-                <view class="picker">
-                    {{firstChoice ? departments[firstChoice] : '请选择'}}
-                </view>
-            </picker>
-        </view>
-        <!-- 第二志愿 -->
-        <view class="cu-form-group margin-top">
-            <view class="title">是否服从调剂</view>
-            <switch name="allowAlterDepartment" bindchange="bindAlterChange" checked></switch>
-        </view>
-        <view class="cu-form-group animation-fade" wx:if="{{alternativeAllowed}}">
-            <view class="title">第二志愿</view>
-            <picker name="secondDepartmentChoice" id="secondDepartmentChoice-picker" value="{{secondChoice}}" range="{{departments}}" bindchange="bindDepartment2Change">
-                <view class="picker">
-                    {{secondChoice ? departments[secondChoice] : '请选择'}}
-                </view>
-            </picker>
-        </view>
+		<!-- 籍贯 -->
+		<view class="cu-form-group">
+			<view class="title">籍贯</view>
+			<picker mode="region" name="birthplace" id="birthPlace-picker" value="{{birthplace}}" bindchange="bindBirthplaceChange">
+				<view class="picker">{{birthplace[0]}}，{{birthplace[1]}}，{{birthplace[2]}}</view>
+			</picker>
+		</view>
 
-        <!-- 其他信息 -->
-        <template is="head" data="{{title: '让我们了解你'}}" />
+		<!-- 意愿部门 -->
+		<template is="head" data="{{title: '意愿部门'}}" />
+		<!-- 第一志愿 -->
+		<view class="cu-form-group margin-top">
+			<view class="title">第一志愿</view>
+			<picker name="firstDepartmentChoice" id="firstDepartmentChoice-picker" value="{{firstChoice}}" range="{{departments}}" bindchange="bindDepartment1Change">
+				<view class="picker">
+					{{firstChoice ? departments[firstChoice] : '请选择'}}
+				</view>
+			</picker>
+		</view>
+		<!-- 第二志愿 -->
+		<view class="cu-form-group margin-top">
+			<view class="title">是否服从调剂</view>
+			<switch name="allowAlterDepartment" bindchange="bindAlterChange" checked></switch>
+		</view>
+		<view class="cu-form-group animation-fade" wx:if="{{alternativeAllowed}}">
+			<view class="title">第二志愿</view>
+			<picker name="secondDepartmentChoice" id="secondDepartmentChoice-picker" value="{{secondChoice}}" range="{{departments}}" bindchange="bindDepartment2Change">
+				<view class="picker">
+					{{secondChoice ? departments[secondChoice] : '请选择'}}
+				</view>
+			</picker>
+		</view>
 
-        <view class="cu-bar bg-white solid-bottom text-black margin-top">
-            <view class="action">
-                <text class="cuIcon-colorlens text-green"></text>爱好特长
-            </view>
-        </view>
-        <view class="cu-form-group margin-bottom-lg">
-            <textarea maxlength="1000" name="hobbies" auto-height placeholder=""></textarea>
-        </view>
-        <view class="cu-bar bg-white solid-bottom text-black">
-            <view class="action">
-                <text class="cuIcon-expressman text-green"></text>实践经历
-            </view>
-        </view>
-        <view class="cu-form-group margin-bottom-lg">
-            <textarea maxlength="1000" name="formerExperience" auto-height placeholder=""></textarea>
-        </view>
-        <view class="cu-bar bg-white solid-bottom text-black">
-            <view class="action">
-                <text class="cuIcon-profile text-green"></text>自我评价
-            </view>
-        </view>
-        <view class="cu-form-group margin-bottom-lg">
-            <textarea maxlength="1000" name="selfExplanation" auto-height placeholder="" ></textarea>
-        </view>
-        <view class="cu-bar bg-white solid-bottom text-black">
-            <view class="action">
-                <text class="cuIcon-profile text-green"></text>你希望社联是个怎样的组织？
-            </view>
-        </view>
-        <view class="cu-form-group margin-bottom-lg" style="align-items: flex-start;min-height: 7em;">
-            <textarea maxlength="1000" name="expectations" auto-height placeholder="你希望社联是个怎样的组织？"></textarea>
-        </view>
+		<!-- 其他信息 -->
+		<template is="head" data="{{title: '让我们了解你'}}" />
+		<view class="cu-bar bg-white solid-bottom text-black margin-top">
+			<view class="action">
+				<text class="cuIcon-colorlens text-green"></text>爱好特长
+			</view>
+		</view>
+		<view class="cu-form-group margin-bottom-lg">
+			<textarea maxlength="1000" name="hobbies" auto-height placeholder=""></textarea>
+		</view>
+		<view class="cu-bar bg-white solid-bottom text-black">
+			<view class="action">
+				<text class="cuIcon-expressman text-green"></text>实践经历
+			</view>
+		</view>
+		<view class="cu-form-group margin-bottom-lg">
+			<textarea maxlength="1000" name="formerExperience" auto-height placeholder=""></textarea>
+		</view>
+		<view class="cu-bar bg-white solid-bottom text-black">
+			<view class="action">
+				<text class="cuIcon-profile text-green"></text>自我评价
+			</view>
+		</view>
+		<view class="cu-form-group margin-bottom-lg">
+			<textarea maxlength="1000" name="selfExplanation" auto-height placeholder=""></textarea>
+		</view>
+		<view class="cu-bar bg-white solid-bottom text-black">
+			<view class="action">
+				<text class="cuIcon-discover text-green"></text>你希望社指是个怎样的组织？
+			</view>
+		</view>
+		<view class="cu-form-group margin-bottom-lg" style="align-items: flex-start;min-height: 7.5em;">
+			<textarea maxlength="1000" name="expectations" auto-height placeholder="你希望社指是个怎样的组织？"></textarea>
+		</view>
 
-        <view class="padding flex flex-direction text-xxl">
-            <button class="cu-btn bg-green margin-tb-sm padding-tb-sm lg shadow" formType="submit" disabled="{{submitBtnDisabled}}">
-                提交报名表
-            </button>
-        </view>
-    </form>
+		<view class="padding flex flex-direction text-xxl">
+			<button class="cu-btn bg-green margin-tb-sm padding-tb-sm lg shadow" formType="submit" disabled="{{submitBtnDisabled}}">
+				提交报名表
+			</button>
+		</view>
+	</form>
 
-    <template is="head" data="{{title: '更多问题请联系'}}" />
-    <view class="flex justify-center padding-lg">
-        <image src="cloud://release-mcwb0.7265-release-mcwb0/zhaoxinzhushou.jpg" mode="aspectFit" lazy-load="true" style="width:600rpx;height:800rpx;" />
-    </view>
-    <view class="flex justify-center padding-lg">
-        <template is="foot" />
-    </view>
-    <view style="height:160rpx;"></view>
-</scroll-view>
+	<template is="head" data="{{title: '更多问题请联系'}}" />
+	<view class="flex justify-center padding-lg">
+		<image src="cloud://release-mcwb0.7265-release-mcwb0/img/qq.jpg" mode="aspectFit" lazy-load="true" style="width:600rpx;height:800rpx;" show-menu-by-longpress />
+	</view>
+
+	<view class="flex justify-center padding-lg">
+		<template is="foot" />
+	</view>
+	<view style="height:200rpx;"></view>
+</view>

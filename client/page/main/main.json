@@ -1,7 +1,7 @@
 {
     "usingComponents": {
-        "aboutau": "../intro/intro",
-        "joinus": "../join-us/join-us",
-        "intro": "../about-au/about-au"
+        "intro-au": "../intro/intro",
+        "joinus": "../join-link/join-link",
+        "dept": "../dept/dept"
     }
 }

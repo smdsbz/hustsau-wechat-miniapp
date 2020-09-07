@@ -1,0 +1,290 @@
+<!--page/about-au/about-au.wxml-->
+<import src="../common/head.wxml" />
+<import src="../common/foot.wxml" />
+<scroll-view scroll-y class="scrollPage">
+	<cu-custom class="bg-green">
+		<view slot="content">
+			<view class="action sub-title">
+				<text class="text-xxl text-bold text-white">部门介绍</text>
+				<text class="text-ABC text-white">department</text>
+			</view>
+		</view>
+	</cu-custom>
+
+	<view class="flex justify-center padding-lg">
+		<image src="{{deptRoot}}department_structure.png" mode="aspectFit" lazy-load show-menu-by-longpress />
+	</view>
+
+	<view class="page-body-text-au">
+		<view class="dept-img-view">
+			<image src="{{deptRoot}}caijianwei.png" mode="aspectFit" lazy-load="true" />
+		</view>
+		<template is="head" data="{{title: '社团财务监督委员会'}}" />
+		<text>
+部门内分为负责人团队、常务组、监督组、执行组。
+        </text>
+		<text class="text-bold">主要职能</text>
+		<text>
+1、服务学生社团完善财务管理；
+2、协同办公室完成打印店报账；
+3、与办公室一起举办财务干训。
+        </text>
+		<text class="text-bold">要求</text>
+		<text>
+细致认真，有责任感
+积极参加部门活动完成任务
+开朗活泼，踏实耐心
+愿意为社团做贡献
+		</text>
+	</view>
+
+	<view class="page-body-text-au">
+		<view class="dept-img-view">
+			<image src="{{deptRoot}}secretary.png" mode="aspectFit" lazy-load="true" />
+		</view>
+		<template is="head" data="{{title: '办公室'}}" />
+		<text>
+部门内分为外事组、行政组、会议组和报账组。
+        </text>
+		<text class="text-bold">主要职能</text>
+		<text>
+1、负责年鉴、制度汇编的整理更新以及值班工作的编排与监督；
+2、协助各项活动的开展，负责36号楼及录音棚的使用；
+3、负责各会议的准备与记录、档案管理以及章程的起草与执行；
+4、负责报账工作。
+		</text>
+		<text class="text-bold">要求</text>
+		<text>
+责任心，细心，耐心
+积极主动，行事有条理
+踏实肯干
+        </text>
+	</view>
+
+	<view class="page-body-text-au">
+		<view class="dept-img-view">
+			<image src="{{deptRoot}}human-resource.png" mode="aspectFit" lazy-load="true"></image>
+		</view>
+		<template is="head" data="{{title: '人力资源部'}}" />
+		<text class="text-bold">主要职能</text>
+		<text>
+1、从事社指的人事管理工作，统筹干事招新及人事资料管理；
+2、考核社指成员的日常工作以及考勤情况，对社指干事进行绩效评优；
+3、负责社指大型活动的人员及物资调配；
+4、组织社指干事培训；
+5、制作颁发社指学生干部聘书及各类荣誉证书。
+        </text>
+		<text class="text-bold">要求</text>
+		<text>
+积极主动，勤劳踏实
+责任心强，团结合作，勇于创新
+对人力资源管理有兴趣
+		</text>
+	</view>
+
+	<view class="page-body-text-au">
+		<view class="dept-img-view">
+			<image src="{{deptRoot}}associations.png" mode="aspectFit" lazy-load="true" />
+		</view>
+		<template is="head" data="{{title: '社团部'}}" />
+		<text>
+部门内分为常务组、活动组、发展组。
+        </text>
+		<text class="text-bold">主要职能</text>
+		<text>
+1、负责社指与学生社团的沟通交流，与社指其他部门协作对接、为学生社团活动与发展出谋划策；
+2、负责部分社指主办活动的组织、策划，为各学生社团搭建活动平台；
+3、负责学生社团资料整理及优秀学生社团精品活动的跟进工作。
+        </text>
+		<text class="text-bold">要求</text>
+		<text>
+责任心、有效率
+踏实肯干、积极主动
+思维敏捷周密
+        </text>
+	</view>
+
+	<view class="page-body-text-au">
+		<view class="dept-img-view">
+			<image src="{{deptRoot}}administration.png" mode="aspectFit" lazy-load="true" />
+		</view>
+		<template is="head" data="{{title: '行政监察部'}}" />
+		<text>
+部门内分为行政组、换届组和常务组。
+        </text>
+		<text class="text-bold">主要职能</text>
+		<text>
+1、协助完成校级学生社团年审、评优等工作，促进我校学生社团健康发展；
+2、行政组：协助负责申请成立校级学生社团的相关审批、注册登记等工作；
+3、换届组：协助学生社团规范完成换届事项；
+4、常务组：负责部门内部、部门之间文化建设工作，以及学生社团会员接待工作。
+        </text>
+		<text class="text-bold">要求</text>
+		<text>
+有责任心、工作踏实
+执行力、沟通能力强
+乐观自信、有热情
+        </text>
+	</view>
+
+	<view class="page-body-text-au">
+		<view class="dept-img-view">
+			<image src="{{deptRoot}}public-relation.png" mode="aspectFit" lazy-load="true" />
+		</view>
+		<template is="head" data="{{title: '公共关系部'}}" />
+		<text class="text-bold">主要职能</text>
+		<text>
+1、维持社指与其他高校相关学生组织之间的联系；
+2、联络校内各类组织，及时了解校园动态；
+3、负责日常管理和培训芳笙工作室（社指主持人队）。
+        </text>
+		<text class="text-bold">要求</text>
+		<text>
+责任心强，积极主动
+活泼开朗，有一定的交际能力
+乐于参与活动，愿意为部门奉献
+        </text>
+	</view>
+
+	<view class="page-body-text-au">
+		<view class="dept-img-view">
+			<image src="{{deptRoot}}pr-planning.png" mode="aspectFit" lazy-load="true" />
+		</view>
+		<template is="head" data="{{title: '外联企划部'}}" />
+		<text class="text-bold">主要职能</text>
+		<text>
+1、协助学生社团完成各类校园文化活动，为学生社团争取与外界同类型大型组织的交流机会；
+2、培训部员与他人沟通交流的技巧和能力。
+        </text>
+		<text class="text-bold">要求</text>
+		<text>
+有责任心，工作踏实
+执行力、沟通能力强
+有良好的交际能力与反应能力
+        </text>
+	</view>
+
+	<view class="page-body-text-au">
+		<view class="dept-img-view">
+			<image src="{{deptRoot}}media.png" mode="aspectFit" lazy-load="true" />
+		</view>
+		<template is="head" data="{{title: '媒体部'}}" />
+		<text>
+部门内分为摄影组、后期组、运营组。
+        </text>
+		<text class="text-bold">主要职能</text>
+		<text>
+1、摄影组：负责活动摄影、摄像，拍摄宣传短片，组织外拍，负责摄影后期等； 
+2、后期组：负责剪辑等视频后期工作，制作活动宣传视频、采访视频、校园短片等；
+3、运营组：撰写活动宣传文案和原创软文，负责公众号排版和简单的美工等。
+        </text>
+		<text class="text-bold">要求</text>
+		<text>
+脑洞大开
+有责任心
+有经验和相关设备者优先
+        </text>
+	</view>
+
+	<view class="page-body-text-au">
+		<view class="dept-img-view">
+			<image src="{{deptRoot}}propaganda.png" mode="aspectFit" lazy-load="true" />
+		</view>
+		<template is="head" data="{{title: '宣传部'}}" />
+		<text class="text-bold">主要职能</text>
+		<text>
+1、活动宣传策划：在实际宣传中运用创意，制定并实施最优传播策略；
+2、艺术设计：设计海报、传单、杂志、社指文化产品等；
+3、人才培养：针对平面设计、摄影后期、宣传创意，文案策划等实践及各类设计软件的使用操作进行人才培训。
+        </text>
+		<text class="text-bold">要求</text>
+		<text>
+积极负责，踏实肯干
+有创意，对设计感兴趣
+有制作文化产品兴趣和想法者优先
+        </text>
+	</view>
+
+	<view class="page-body-text-au">
+		<view class="dept-img-view">
+			<image src="{{deptRoot}}new-media.png" mode="aspectFit" lazy-load="true" />
+		</view>
+		<template is="head" data="{{title: '新媒体工作室'}}" />
+		<text class="text-bold">主要职能</text>
+		<text>
+1、统筹运营社指QQ平台，实时发布讯息；
+2、策划特色专题线上活动；
+3、华中大理想青年公众号的投稿推送及新媒体宣传模式的尝试和优化。
+        </text>
+		<text class="text-bold">要求</text>
+		<text>
+兴趣广泛，思维活跃，知识面较广
+动能与人沟通，静能码字编辑
+有全局意识及创新意识
+        </text>
+	</view>
+
+	<view class="page-body-text-au">
+		<view class="dept-img-view">
+			<image src="{{deptRoot}}sicunstudio.png" mode="aspectFit" lazy-load="true" />
+		</view>
+		<template is="head" data="{{title: '思存工作室'}}" />
+		<text class="text-bold">主要职能</text>
+		<text>
+1、为社指及学生社团提供网站制作和服务器维护的技术支持；
+2、为社指和学生社团的各项活动提供硬件和软件方面的技术支持；
+3、互联网产品设计运营（例如：微信小程序）。
+        </text>
+		<text class="text-bold">要求</text>
+		<text>
+积极认真，思维活跃
+对程序设计或互联网产品运营感兴趣者优先
+        </text>
+	</view>
+
+	<view class="page-body-text-au">
+		<view class="dept-img-view">
+			<image src="{{deptRoot}}wenyibu.png" mode="aspectFit" lazy-load="true" />
+		</view>
+		<template is="head" data="{{title: '文艺拓展部'}}" />
+		<text>
+部门内分为策划组、筹备组、场控组、常务组和监理组。
+        </text>
+		<text class="text-bold">主要职能</text>
+		<text>
+1、促进完善学生社团文艺活动，提供专业建议与服务；
+2、整合校内外文艺资源，开拓校级文艺渠道；
+3、负责文艺中心内部事务以及文艺中心相关活动的资料整理；
+4、文艺活动的策划撰写、完善以及组织实施；
+5、对文艺活动信息进行整合与更新。
+        </text>
+		<text class="text-bold">要求</text>
+		<text>
+1、谦虚谨慎，乐于奉献。有较强的责任心和荣誉感，有较强的团队意识和大局观念；
+2、热爱文娱活动，善于创新，对待工作踏实认真；
+3、有一定组织协调能力、人际交往能力和临场应变能力，有一定文艺素养
+        </text>
+	</view>
+
+	<block>
+		<template is="head" data="{{title: '现在就加入'}}" />
+		<view class="felx justify-center padding-sm">
+			<view class="margin-tb-sm text-center">
+				<button class="cu-btn lg round bg-green shadow" bindtap="onTapNav" data-curr="1">加入我们</button>
+			</view>
+		</view>
+		<template is="head" data="{{title: '我们在哪里'}}" />
+		<view class="felx justify-center padding-sm">
+			<view class="margin-tb-sm text-center">
+				<button class="cu-btn lg round bg-green shadow" bindtap="toLoc" data-loc="buildingSU">去大学生活动中心</button>
+			</view>
+			<view class="margin-tb-sm text-center">
+				<button class="cu-btn lg round bg-green shadow" bindtap="toLoc" data-loc="building36">去 36 号楼</button>
+			</view>
+		</view>
+		<view class="flex justify-center padding-lg">
+			<template is="foot" />
+		</view>
+	</block>
+	<view style="height:160rpx;"></view>
+</scroll-view>

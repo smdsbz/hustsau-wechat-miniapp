@@ -3,10 +3,11 @@
 
 /** overall */
 
-page{
-  background-color: #fff;
-  line-height: 1.6;
-  font-family: -apple-system-font, "Helvetica Neue", sans-serif;
+page {
+    --darkBlack: #0a0a0a;
+    background-color: #fff;
+    line-height: 1.6;
+    font-family: -apple-system-font, "Helvetica Neue", sans-serif;
 }
 
 .scrollPage {
@@ -29,7 +30,10 @@ page{
     display: inline-block;
     padding: 0 40rpx 20rpx 40rpx;
     font-size: 40rpx;
-    color: #333;
+    color: var(--darkBlack);
+    font-weight: bold;
+    letter-spacing: .1em;
+    text-shadow: var(--ShadowSize) var(--blackShadow);
 }
 
 .page-head-line {
@@ -46,14 +50,15 @@ page{
 }
 
 .page-body-text-au {
-    color: black;
-    padding: 0 40rpx 120rpx 40rpx;
+    color: var(--darkBlack);
+    padding: 0 40rpx 100rpx 40rpx;
     font-size: 32rpx;
     text-align: justify;
 }
 
 .stress {
-    color: orange;
+    color: var(--orange);
+    font-weight: bold;
 }
 
 /** switch-sex */

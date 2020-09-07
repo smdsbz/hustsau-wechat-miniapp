@@ -1,0 +1,35 @@
+<!--page/join-link/join-link.wxml-->
+<import src="../common/head.wxml" />
+<import src="../common/foot.wxml" />
+<view>
+	<cu-custom class="bg-green">
+		<view slot="content">
+			<view class="action sub-title">
+				<text class="text-xxl text-bold text-white">加入我们</text>
+				<text class="text-ABC text-white" decode="true">join us</text>
+			</view>
+		</view>
+	</cu-custom>
+
+	<view class="page-body-text-au" style="margin-top:-40rpx">
+		<template is="head" data="{{title: '如何加入我们'}}" />
+		<text decode>
+&emsp;&emsp;为深入学习宣传贯彻习近平新时代中国特色社会主义思想和党的十九大精神，积极推进我校共青团、学生会组织改革攻坚，深化实施“青年马克思主义者培养工程”，进一步加强和完善团学干部队伍的选拔考核、理想信念教育和综合能力培养，学校决定从2020级本科新生中选拔部分优秀学生骨干进入第二期“青梧英才”新生骨干训练营进行培养。
+&emsp;&emsp;<text class="text-bold">扫描下面二维码</text>，进行新生骨干训练营报名，选择学生社团指导中心里你所心仪的部门，加入社指这个温暖的大家庭吧！
+		</text>
+		<view class="flex justify-center padding-lg">
+			<image src="{{fileRoot}}img/wjx-qrcode.jpg" mode="aspectFit" lazy-load="true" style="width:640rpx;height:800rpx;" show-menu-by-longpress />
+		</view>
+		<text decode>（此二维码与新生资料袋中校级学生组织宣传折页上的报名二维码相同）</text>
+	</view>
+
+	<template is="head" data="{{title: '更多问题请联系'}}" />
+	<view class="flex justify-center padding-lg">
+		<image src="{{fileRoot}}img/qq.jpg" mode="aspectFit" lazy-load="true" style="width:600rpx;height:800rpx;" show-menu-by-longpress />
+	</view>
+
+	<view class="flex justify-center padding-lg">
+		<template is="foot" />
+	</view>
+	<view style="height:200rpx;"></view>
+</view>

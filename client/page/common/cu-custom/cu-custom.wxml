@@ -1,0 +1,8 @@
+<view class="cu-custom" style="height:{{CustomBar}}px">
+	<view class="cu-bar bg-img fixed text-white" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+		<image class="img" src="/image/cardBg.png" />
+		<view class="content" style="top:{{StatusBar}}px">
+			<slot name="content" />
+		</view>
+	</view>
+</view>

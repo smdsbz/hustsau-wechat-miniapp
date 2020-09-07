@@ -1,8 +1,8 @@
 const openIdUrl = require('./config').openIdUrl
 
 App({
-    onLaunch: function() {
-        console.log('App Launch')
+    onLaunch: function () {
+        console.info("App Launch");
         if (!wx.cloud) {
             console.error("请使用 2.2.3 或以上的基础库以使用云能力");
             wx.showToast({
@@ -30,38 +30,17 @@ App({
                 }
             }
         });
-
-        (async() => {
-            let cloudFileKey = Object.keys(this.globalData.cloudFileList),
-                cloudFileString = [];
-            for (let i of cloudFileKey)
-                cloudFileString.push(this.globalData.cloudFileList[i].fileID);
-            await wx.cloud.getTempFileURL({
-                fileList: cloudFileString
-            }).then(res => {
-                // get temp file URL
-                for (let i in res.fileList)
-                    this.globalData.cloudFileList[cloudFileKey[i]].url =
-                        res.fileList[i].tempFileURL;
-            });
-        })();
-
     },
-    onShow: function() {
-        console.log('App Show')
+    onShow: function () {
+        console.info("App Show");
     },
-    onHide: function() {
-        console.log('App Hide')
+    onHide: function () {
+        console.info("App Hide");
     },
     globalData: {
         hasLogin: false,
         openid: null,
-        cloudFileList: {
-            "img/cardBg.jpg": {
-                fileID: "cloud://release-mcwb0.7265-release-mcwb0-1256427422/img/cardBg.png",
-                url: "https://7265-release-mcwb0-1256427422.tcb.qcloud.la/img/cardBg.png"
-            }
-        },
+        cloudFileRoot: "cloud://release-mcwb0.7265-release-mcwb0/",
         location: {
             building36: {
                 address: "SicunStudio",
@@ -81,36 +60,36 @@ App({
             }
         }
     },
-    // lazy loading openid
-    getUserOpenId: function(callback) {
-        var self = this
 
+    // lazy loading openid
+    getUserOpenId(callback) {
+        var self = this;
         if (self.globalData.openid) {
-            callback(null, self.globalData.openid)
-        } else {
-            wx.login({
-                success: function(data) {
-                    wx.request({
-                        url: openIdUrl,
-                        data: {
-                            code: data.code
-                        },
-                        success: function(res) {
-                            console.log('拉取openid成功', res)
-                            self.globalData.openid = res.data.openid
-                            callback(null, self.globalData.openid)
-                        },
-                        fail: function(res) {
-                            console.log('拉取用户openid失败，将无法正常使用开放接口等服务', res)
-                            callback(res)
-                        }
-                    })
-                },
-                fail: function(err) {
-                    console.log('wx.login 接口调用失败，将无法正常使用开放接口等服务', err)
-                    callback(err)
-                }
-            })
+            callback(null, self.globalData.openid);
+            return;
         }
+        wx.login({
+            success(data) {
+                wx.request({
+                    url: openIdUrl,
+                    data: {
+                        code: data.code
+                    },
+                    success(res) {
+                        console.log('拉取openid成功', res)
+                        self.globalData.openid = res.data.openid
+                        callback(null, self.globalData.openid)
+                    },
+                    fail(res) {
+                        console.error('拉取用户openid失败，将无法正常使用开放接口等服务', res)
+                        callback(res)
+                    }
+                })
+            },
+            fail(err) {
+                console.error('wx.login 接口调用失败，将无法正常使用开放接口等服务', err)
+                callback(err)
+            }
+        })
     }
 })

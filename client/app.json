@@ -1,20 +1,17 @@
 {
     "pages": [
-        "page/main/main",
-        "page/about-au/about-au",
-        "page/intro/intro",
-        "page/join-us/join-us"
+        "page/main/main"
     ],
     "window": {
         "backgroundColor": "#f8f8f9",
         "backgroundTextStyle": "light",
         "navigationBarBackgroundColor": "#f8f8f9",
-        "navigationBarTitleText": "社联微信小程序端",
+        "navigationBarTitleText": "社指微信小程序端",
         "navigationBarTextStyle": "black",
         "navigationStyle": "custom"
     },
     "usingComponents": {
-        "cu-custom": "/colorui/components/cu-custom"
+        "cu-custom": "page/common/cu-custom/cu-custom"
     },
     "networkTimeout": {
         "request": 10000,

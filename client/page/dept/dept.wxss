@@ -1,0 +1,12 @@
+/* client/page/about-au/about-au.wxss */
+.dept-img-view {
+    justify-content: center;
+    display: flex;
+    padding: 40rpx;
+    margin-bottom: -80rpx;
+}
+
+.dept-img-view image {
+    width: 400rpx;
+    height: 400rpx;
+}

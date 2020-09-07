@@ -2,158 +2,166 @@
 <import src="../common/head.wxml" />
 <import src="../common/foot.wxml" />
 <scroll-view scroll-y class="scrollPage">
-    <cu-custom class="bg-green" bgImage="{{fileList['img/cardBg.jpg'].url}}">
-        <view slot="content">
-            <view class="action sub-title">
-                <text class="text-xxl text-bold text-white">关于社联</text>
-                <text class="text-ABC text-white">about au</text>
-                <!-- last-child选择器-->
-            </view>
-        </view>
-    </cu-custom>
+	<cu-custom class="bg-green">
+		<view slot="content">
+			<view class="action sub-title">
+				<text class="text-xxl text-bold text-white">关于社指</text>
+				<text class="text-ABC text-white">about au</text>
+			</view>
+		</view>
+	</cu-custom>
 
-    <view class='page-body-text-au'>
-        <text decode="true">
-&emsp;&emsp;华中大社联全称华中科技大学学生社团联合会，是学校党委领导、学校团委指导的校级学生组织，自1997年成立至今，社联一直以“<text class="stress">增大学景，滋大学情，弘大学德，扬大学名</text>”为不懈追求的目标；以“<text class="stress">服务于社团，服务于会员</text>”为恒久不变的宗旨，协助校团委学生社团管理部做好学生社团管理和服务的延伸工作。
-        </text>
-    </view>
+	<view class="page-body-text-au" style="padding-bottom:20rpx;">
+		<text decode="true">
+&emsp;&emsp;华中科技大学学生社团指导中心，是在学校党委的统一领导下，由学校团委直接指导开展工作的全校性学生组织，主要职能是指导学生社团、服务学生社团。自成立至今，社指一直以<text class="stress">“增大学景，滋大学情，弘大学德，扬大学名”</text>为不懈追求的目标；以<text class="stress">“服务于社团，服务于会员”</text>为恒久不变的宗旨！
+		</text>
+	</view>
 
-    <view class='page-body-text-au'>
-        <template is="head" data="{{title: 'Logo'}}" />
-        <view class="flex justify-center padding-lg">
-            <image src="../../image/logo.png" style="width:360rpx;height:360rpx;" mode="aspectFit" lazy-load="true"></image>
-        </view>
-        <text>
-用象征希望，充满生机的“社联绿”为主色调。
-似初生的太阳，在成长；
-似翻腾的海浪，在前进。
-以“才”为中心，体现社联重视人才；
-以“团”为外形，体现社联团结包容。
-        </text>
-    </view>
+	<view class="page-body-text-au">
+		<template is="head" data="{{title: 'Logo'}}" />
+		<view class="flex justify-center padding-lg">
+			<image src="../../image/logo.png" mode="aspectFit" lazy-load="true" style="width:400rpx;height:400rpx;"></image>
+		</view>
+		<view class="text-center"><text>
+用象征希望，充满生机的
+“社指绿”为主色调
+似初生的太阳，在成长
+似翻腾的海浪，在前进
+以“才”为中心，体现社指注重能力培养
+以“团”为外形，展示社指之家团结包容
+		</text></view>
+	</view>
 
-    <view class='page-body-text-au'>
-        <template is="head" data="{{title: 'Slogan'}}" />
-        <view style="text-align:center;">
-            <text class="stress" decode="{{true}}">
+	<view class="page-body-text-au">
+		<template is="head" data="{{title: '口号'}}" />
+		<view class="text-center">
+			<text class="stress" decode="{{true}}">
 激情澎湃，社团地带；
-愿我AU，荣耀常在！
-            </text>
-        </view>
-        <text>  
+愿<text style="letter-spacing: .12em;">我AU</text>，荣耀常在！
+			</text>
+			<text>
 永远充满激情、斗志昂扬，
 因为这是学生社团的地带。
 永远骄傲自信、追求卓越，
-因为这是社联的舞台。
-这就是社联，就是每一个社联人！
-        </text>
-    </view>
+因为这是社指的舞台。
+这就是社指，这就是每一个社指人!
+			</text>
+		</view>
+	</view>
 
-    <view class='page-body-text-au'>
-        <template is="head" data="{{title: 'Mascot'}}" />
-        <view class="flex justify-center padding-lg">
-            <image src="../../image/weizai.jpg" style="width:360rpx;height:360rpx;" mode="aspectFit" lazy-load="true"></image>
-        </view>
-        <text>
-      社联微仔作为华中大社联的吉祥物，一方面担当着微信、QQ等公众平台的主页君；另ー方面也是社联周边（地图、玩偶、徽章等）的主要题材。微仔作为社联的“形象代言人”，用乐观向上的态度感染着每一位HUSTer。
+	<view class="page-body-text-au">
+		<template is="head" data="{{title: '吉祥物'}}" />
+		<view class="flex justify-center padding-lg">
+			<image src="../../image/weizai_{{mascotIdx}}.png" mode="aspectFit" lazy-load="true" style="width:360rpx;height:360rpx;" bindtap="changeMascot" animation="{{mascotAnim}}" />
+		</view>
+		<text>
+社指微仔作为华中大社指的吉祥物，一方面担任着QQ的主页君；另ー方面也是社指周边（地图、玩偶、徽章等）的主要题材。微仔作为社指的“形象代言人”，用乐观向上的态度感染着每一位HUSTer。同时可爱的微仔也将作为每位HUSTer的好朋友，一直陪伴着各位同学度过在华科的美好时光。
+		</text>
+	</view>
+
+	<view class="page-body-text-au">
+		<template is="head" data="{{title: '会歌'}}" />
+		<text>
+《蓝色海洋》是华中科技大学学生社团指导中心的会歌。蓝色是梦想的代表色，用蓝色海洋比喻社团是大家可以自由展示的广阔空间。全词以“我”为主体，描绘出每一位HUSTer眼中的社团。在大学迷茫之际，还有社团陪伴在我们左右，让我们懂得如何去面对困难。我们的大学，灵动的世界，亲密的朋友。
       </text>
-    </view>
+	</view>
 
-    <view class='page-body-text-au'>
-        <template is="head" data="{{title: 'Anthem'}}" />
-        <text style="color:black">
-      《蓝色海洋》是华中科技大学学生社团联合会的会歌。蓝色是梦想的代表色，用蓝色海洋比喻社团是大家可以自由展示的广阔空间。全词以“我”为主体，描绘出每一位HUSTer眼中的社团。在大学迷茫之际，还有社团陪伴在我们左右，让我们懂得如何去面对困难。我们的大学，灵动的世界，亲密的朋友。
-      </text>
-    </view>
+	<view class="page-body-text-au">
+		<template is="head" data="{{title: '社团文化节'}}" />
+		<text>
+这里有无与伦比的盛大晚会，包罗万象的社团PARTY，缤纷多彩的社团活动，近百个社团争妍斗艳，社团文化的馨香洋溢整个校园……
+露天大PARTY——游园会：游戏玩不尽，奖品拿不完
+高端视觉盛宴——社团文化节开幕式晚会：向你展示最酷最靓的社团，最多彩最热烈的社团文化。
+缤彩纷呈——系列活动 ：抓人眼球的海报彩喷，意想不到的微仔快闪，还有门票福袋等你来拿！
+		</text>
+		<view class="flex justify-center padding-top-lg">
+			<image src="{{fileRoot}}img/activity/wenhuajie-1.jpg" style="width:680rpx;height:500rpx;" mode="aspectFit" lazy-load="true"></image>
+		</view>
+		<view class="flex justify-center padding-top-lg">
+			<image src="{{fileRoot}}img/activity/wenhuajie-2.jpg" style="width:680rpx;height:460rpx;" mode="aspectFit" lazy-load="true"></image>
+		</view>
+	</view>
 
-    <view class="page-body-text-au">
-        <template is="head" data="{{title: '社团文化节'}}" />
-        <text>
-    传承经典、推陈出新的文艺晚会，异彩纷呈的社团展演，缤纷多彩的社团活动...社团文化节通通带给你。      
-    露天大PARTY——游园会：游戏玩不尽，奖品拿不完
-    高端视觉盛宴——晚会：气氛high不够，精彩享不停。
-    最炫社团风——系列活动：没有办不到，只有想不到。
-        </text>
-        <view class="flex justify-center padding-top-lg">
-            <image src="cloud://release-mcwb0.7265-release-mcwb0/wenhuajie1.jpg" style="width:680rpx;height:500rpx;" mode="aspectFit" lazy-load="true"></image>
-        </view>
-        <view class="flex justify-center padding-top-lg">
-            <image src="cloud://release-mcwb0.7265-release-mcwb0/wenhuajie2.jpg" style="width:680rpx;height:460rpx;" mode="aspectFit" lazy-load="true"></image>
-        </view>
-    </view>
+	<view class="page-body-text-au">
+		<template is="head" data="{{title: '百团大战'}}" />
+		<view class="text-center"><text>
+声势浩大的百团大战
+在这里社团达人，各显神通
+只为吸引你的到来
+		</text></view>
+		<view class="flex justify-center padding-top-lg">
+			<image src="{{fileRoot}}img/activity/baituandazhan-1.jpg" style="width:680rpx;height:460rpx;" mode="aspectFit" lazy-load="true"></image>
+		</view>
+		<view class="flex justify-center padding-top-lg">
+			<image src="{{fileRoot}}img/activity/baituandazhan-2.jpg" style="width:680rpx;height:460rpx;" mode="aspectFit" lazy-load="true"></image>
+		</view>
+	</view>
 
-    <view class='page-body-text-au'>
-        <template is="head" data="{{title: '百团大战'}}" />
-        <text style="color:black">
-社团招新，浩大场面不容错过
-近百社团，风采各异总有一款适合你
-        </text>
-        <view class="flex justify-center padding-top-lg">
-            <image src="cloud://release-mcwb0.7265-release-mcwb0/baituandazhan1.jpg" style="width:680rpx;height:460rpx;" mode="aspectFit" lazy-load="true"></image>
-        </view>
-        <view class="flex justify-center padding-top-lg">
-            <image src="cloud://release-mcwb0.7265-release-mcwb0/baituandazhan2.jpg" style="width:680rpx;height:460rpx;" mode="aspectFit" lazy-load="true"></image>
-        </view>
-    </view>
+	<view class="page-body-text-au">
+		<template is="head" data="{{title: '社指春游'}}" />
+		<text>
+樱花烂漫，大家集体去踏青春游。
+大家放松身心，探索神秘，感受春天，触摸春天。
+		</text>
+		<view class="flex justify-center padding-top-lg">
+			<image src="{{fileRoot}}img/activity/chunyou-1.jpg" style="width:680rpx;height:320rpx;" mode="aspectFit" lazy-load="true"></image>
+		</view>
+		<view class="flex justify-center padding-top-lg">
+			<image src="{{fileRoot}}img/activity/chunyou-2.jpg" style="width:680rpx;height:460rpx;" mode="aspectFit" lazy-load="true"></image>
+		</view>
+	</view>
 
-    <view class='page-body-text-au' style="text-align:center;">
-        <template is="head" data="{{title: '社团进军营'}}" />
-        <text style="color:black;">
-        军训间隙，精彩不断
-        社团抢先看
-        轮滑单车，魔术街舞
-        千万别眨眼
-      </text>
-        <view class="flex justify-center padding-top-lg">
-            <image src="cloud://release-mcwb0.7265-release-mcwb0/shetuanjinjunying1.png" style="width:680rpx;height:460rpx;" mode="aspectFit" lazy-load="true"></image>
-        </view>
-        <view class="flex justify-center padding-top-lg">
-            <image src="cloud://release-mcwb0.7265-release-mcwb0/shetuanjinjunying2.png" style="width:680rpx;height:460rpx;" mode="aspectFit" lazy-load="true"></image>
-        </view>
-    </view>
+	<view class="page-body-text-au" style="padding-bottom:0;">
+		<text>
+亲爱的小萌新们，说了这么多，有没有对华中科技大学学生社团指导中心有了更深入的了解呢？想不想加入我们社指的大家庭呢？
 
-    <view class='page-body-text-au' style="padding-bottom:0;">
-        <text style="color:black">
-    讲了这么多，想必大家都对华中科技大学学生社团联合会这个略显陌生的组织有了最基本、直接的了解与兴趣，那么:
-    那边的小萌新，对，就是你
-    你想参与全武汉最大的高校露天晚会的筹划吗？
-    你想要成为华科百余社团的管理者吗？
-    你想跟一群极具才华的人们成为小伙伴吗？
-    充满着活力、洋溢着青春的华中大社联将为你提供实现这些的舞台！
-    快来加入华中大社联这个快乐的大家庭吧！  
-    最后，
-    </text>
-        <view style="text-align:center;">
-            <text class="stress">
+倘若你热爱生活，积极向上，请加入我们吧！
+倘若你有许多稀奇古怪的点子，请加入我们吧！
+倘若你想感受大家庭的温暖，请加入我们吧！
+倘若你想参与各种社团活动的组织策划，请加入我们吧！
+
+社指永远愿意给你们提供舞台，帮助你们展现耀眼的自我。
+最后：
+		</text>
+		<view class="text-center">
+			<text class="stress" decode="{{true}}">
 激情澎湃，社团地带；
-愿我AU，荣耀常在！
-            </text>
-        </view>
-    </view>
+愿<text style="letter-spacing: .12em;">我AU</text>，荣耀常在！
+			</text>
+		</view>
+	</view>
 
-    <block>
-        <template is="head" data="{{title: '现在就加入'}}" />
-        <view class="flex justify-center padding-sm">
-            <view class="margin-tb-sm text-center">
-                <button class="cu-btn lg round bg-green shadow" bindtap="onTapNav" data-curr="1">加入我们</button>
-            </view>
-        </view>
-        <template is="head" data="{{title: '我们在哪里'}}" />
-        <view class="justify-center padding-sm">
-            <view class="margin-tb-sm text-center">
-                <button class="cu-btn lg round bg-green shadow" bindtap="toLoc" data-loc="buildingSU">去大学生活动中心</button>
-            </view>
-            <view class="margin-tb-sm text-center">
-                <button class="cu-btn lg round bg-green shadow" bindtap="toLoc" data-loc="building36">去 36 号楼</button>
-            </view>
-        </view>
-        <template is="head" data="{{title: '更多问题请联系'}}" />
-        <view class="flex justify-center padding-lg">
-            <image src="cloud://release-mcwb0.7265-release-mcwb0/zhaoxinzhushou.jpg" mode="aspectFit" lazy-load="true" style="width:600rpx;height:800rpx;" />
-        </view>
-        <view class="flex justify-center padding-lg">
-            <template is="foot" />
-        </view>
-    </block>
-    <view style="height:160rpx;"></view>
+	<template is="head" data="{{title: '现在就加入'}}" />
+	<view class="flex justify-center padding-sm">
+		<view class="margin-tb-sm text-center">
+			<button class="cu-btn lg round bg-green shadow" bindtap="onTapNav" data-curr="1">加入我们</button>
+		</view>
+	</view>
+	<template is="head" data="{{title: '我们在哪里'}}" />
+	<view class="justify-center padding-sm">
+		<view class="margin-tb-sm text-center">
+			<button class="cu-btn lg round bg-green shadow" bindtap="toLoc" data-loc="buildingSU">去大学生活动中心</button>
+		</view>
+		<view class="margin-tb-sm text-center">
+			<button class="cu-btn lg round bg-green shadow" bindtap="toLoc" data-loc="building36">去 36 号楼</button>
+		</view>
+	</view>
+
+	<view class="page-body-text-au">
+		<template is="head" data="{{title: '更多'}}" />
+		<text>
+要想进一步了解华中大社指的小可爱们，可以通过扫描下方的QQ二维码，添加萌萌的仔仔为好友哦！
+		</text>
+		<view class="flex justify-center padding-top-lg">
+			<!-- 长按菜单 -->
+			<image src="{{fileRoot}}img/qq.jpg" mode="aspectFit" lazy-load="true" style="width:600rpx;height:800rpx;" show-menu-by-longpress />
+		</view>
+	</view>
+
+	<!-- main end -->
+	<view class="flex justify-center padding-lg">
+		<template is="foot" />
+	</view>
+
+	<view style="height:200rpx;"></view>
 </scroll-view>
