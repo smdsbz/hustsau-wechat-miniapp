@@ -6,7 +6,7 @@
 		<view slot="content">
 			<view class="action sub-title">
 				<text class="text-xxl text-bold text-white">关于社指</text>
-				<text class="text-ABC text-white">about au</text>
+				<text class="text-ABC text-white">about ag</text>
 			</view>
 		</view>
 	</cu-custom>
@@ -37,7 +37,7 @@
 		<view class="text-center">
 			<text class="stress" decode="{{true}}">
 激情澎湃，社团地带；
-愿<text style="letter-spacing: .12em;">我AU</text>，荣耀常在！
+愿<text style="letter-spacing: .12em;">我AG</text>，荣耀常在！
 			</text>
 			<text>
 永远充满激情、斗志昂扬，
@@ -126,7 +126,7 @@
 		<view class="text-center">
 			<text class="stress" decode="{{true}}">
 激情澎湃，社团地带；
-愿<text style="letter-spacing: .12em;">我AU</text>，荣耀常在！
+愿<text style="letter-spacing: .12em;">我AG</text>，荣耀常在！
 			</text>
 		</view>
 	</view>

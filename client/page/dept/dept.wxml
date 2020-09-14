@@ -20,9 +20,6 @@
 			<image src="{{deptRoot}}caijianwei.png" mode="aspectFit" lazy-load="true" />
 		</view>
 		<template is="head" data="{{title: '社团财务监督委员会'}}" />
-		<text>
-部门内分为负责人团队、常务组、监督组、执行组。
-        </text>
 		<text class="text-bold">主要职能</text>
 		<text>
 1、服务学生社团完善财务管理；
@@ -43,9 +40,6 @@
 			<image src="{{deptRoot}}secretary.png" mode="aspectFit" lazy-load="true" />
 		</view>
 		<template is="head" data="{{title: '办公室'}}" />
-		<text>
-部门内分为外事组、行政组、会议组和报账组。
-        </text>
 		<text class="text-bold">主要职能</text>
 		<text>
 1、负责年鉴、制度汇编的整理更新以及值班工作的编排与监督；
@@ -87,9 +81,6 @@
 			<image src="{{deptRoot}}associations.png" mode="aspectFit" lazy-load="true" />
 		</view>
 		<template is="head" data="{{title: '社团部'}}" />
-		<text>
-部门内分为常务组、活动组、发展组。
-        </text>
 		<text class="text-bold">主要职能</text>
 		<text>
 1、负责社指与学生社团的沟通交流，与社指其他部门协作对接、为学生社团活动与发展出谋划策；
@@ -109,15 +100,12 @@
 			<image src="{{deptRoot}}administration.png" mode="aspectFit" lazy-load="true" />
 		</view>
 		<template is="head" data="{{title: '行政监察部'}}" />
-		<text>
-部门内分为行政组、换届组和常务组。
-        </text>
 		<text class="text-bold">主要职能</text>
 		<text>
 1、协助完成校级学生社团年审、评优等工作，促进我校学生社团健康发展；
-2、行政组：协助负责申请成立校级学生社团的相关审批、注册登记等工作；
-3、换届组：协助学生社团规范完成换届事项；
-4、常务组：负责部门内部、部门之间文化建设工作，以及学生社团会员接待工作。
+2、协助负责申请成立校级学生社团的相关审批、注册登记等工作；
+3、协助学生社团规范完成换届事项；
+4、负责部门内部、部门之间文化建设工作，以及学生社团会员接待工作。
         </text>
 		<text class="text-bold">要求</text>
 		<text>
@@ -169,14 +157,11 @@
 			<image src="{{deptRoot}}media.png" mode="aspectFit" lazy-load="true" />
 		</view>
 		<template is="head" data="{{title: '媒体部'}}" />
-		<text>
-部门内分为摄影组、后期组、运营组。
-        </text>
 		<text class="text-bold">主要职能</text>
 		<text>
-1、摄影组：负责活动摄影、摄像，拍摄宣传短片，组织外拍，负责摄影后期等； 
-2、后期组：负责剪辑等视频后期工作，制作活动宣传视频、采访视频、校园短片等；
-3、运营组：撰写活动宣传文案和原创软文，负责公众号排版和简单的美工等。
+1、负责活动摄影、摄像，拍摄宣传短片，组织外拍，负责摄影后期等； 
+2、负责剪辑等视频后期工作，制作活动宣传视频、采访视频、校园短片等；
+3、撰写活动宣传文案和原创软文，负责公众号排版和简单的美工等。
         </text>
 		<text class="text-bold">要求</text>
 		<text>
@@ -247,9 +232,6 @@
 			<image src="{{deptRoot}}wenyibu.png" mode="aspectFit" lazy-load="true" />
 		</view>
 		<template is="head" data="{{title: '文艺拓展部'}}" />
-		<text>
-部门内分为策划组、筹备组、场控组、常务组和监理组。
-        </text>
 		<text class="text-bold">主要职能</text>
 		<text>
 1、促进完善学生社团文艺活动，提供专业建议与服务；

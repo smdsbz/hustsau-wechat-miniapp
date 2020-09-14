@@ -1,7 +1,14 @@
 # hustsau-wechat-miniapp
-WeChat miniapp repository
+
+WeChat miniapp repository, Miniapp name `HUSTAG Entrance`.
 
 # Changelog
+
+## 1.8.2
+
+2020 Fall Update, by [dorence](https://github.com/dorence)
+1. C HUSTAU -> *HUSTAG*
+2. M Delete the content of the department's internal grouping in the department introduction.
 
 ## 1.8.1
 

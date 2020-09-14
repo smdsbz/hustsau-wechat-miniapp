@@ -1,11 +1,8 @@
 {
 	"appid": "wx605fd2d564055740",
-	"projectname": "HustsauEntrance",
+	"projectname": "HUSTAG Entrance",
 	"cloudfunctionRoot": "cloudfunctions/",
 	"miniprogramRoot": "client/",
-	"client": "client/",
-	"qcloudRoot": "server/",
-	"svr": "server/",
 	"libVersion": "2.12.0",
 	"setting": {
 		"urlCheck": true,
@@ -31,7 +28,7 @@
 		},
 		"bundle": true,
 		"useIsolateContext": true,
-		"useCompilerModule": false,
+		"useCompilerModule": true,
 		"userConfirmedUseCompilerModuleSwitch": false
 	},
 	"simulatorType": "wechat",
